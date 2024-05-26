@@ -1,12 +1,79 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.navbar {
+  display: flex; /* Use Flexbox layout */
+  background-color: #000000; /* Background color */
+  padding: 10px; /* Padding around the navbar */
+  font-family: 'Avenir', sans-serif; /* Use Avenir font */
+  position:fixed;
+  left:0;
+  right:0;
+}
+
+.navbar ul {
+  list-style-type: none; /* Remove default list styles */
+  padding: 0;
+  margin: 0;
+  display: flex; /* Use Flexbox layout for the list */
+  width: 100%; /* Ensure the list takes up full width */
+  justify-content: space-between; /* Distribute items evenly along the main axis */
+}
+
+.navbar li {
+  margin: 0 10px; /* Add spacing between navigation items */
+}
+
+.navbar a {
+  text-decoration: none; /* Remove underline from links */
+  color: rgb(255, 255, 255); /* Set default text color */
+  font-size: 20pt;
+  font-weight: 500;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* Change text color to orange on hover */
+.navbar a:hover {
+  color: orange;
+}
+
+
+body{
+    background-color: rgb(241,179,56);
+}
+
+h1{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-size: 40px;
+    margin-top: -200;
+    font-weight: 500;
+    letter-spacing: -5px;
+}
+</style>
+</head>
+
 <body>
-:DDDDDDDDD
-<h1>My First Heading</h1>
 
-<p>My first paragraph.</p>
+ 
 
-<p>New paragraph!!</>
+<div class="navbar">
+  
+    <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="music.html">Music</a></li>
+    <li><a href="articles.html">Articles</a></li>
+    <li><a href="spingallery.html">Gallery</a></li>
+    <li><a href="about.html">About</a></li>
+    </ul>
+</div>
+<h1>homepage</h1>
+<img src="images/goldenfreddie.png" style="padding:100px;">
+
+
 
 </body>
 </html>

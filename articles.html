@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About/Contact</title>
+    <style>
+       
+        .click-image {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            display: none;
+            transition: transform 0.5s ease;
+        }
+
+        .navbar {
+        display: flex; /* Use Flexbox layout */
+        background-color: #000000; /* Background color */
+        padding: 10px; /* Padding around the navbar */
+        font-family: 'Avenir', sans-serif; /* Use Avenir font */
+        position:fixed;
+        left:0;
+        right:0;
+        }
+
+        .navbar ul {
+        list-style-type: none; /* Remove default list styles */
+        padding: 0;
+        margin: 0;
+        display: flex; /* Use Flexbox layout for the list */
+        width: 100%; /* Ensure the list takes up full width */
+        justify-content: space-between; /* Distribute items evenly along the main axis */
+        }
+
+        .navbar li {
+        margin: 0 10px; /* Add spacing between navigation items */
+        }
+
+        .navbar a {
+        text-decoration: none; /* Remove underline from links */
+        color: rgb(255, 255, 255); /* Set default text color */
+        font-size: 20pt;
+        font-weight: 500;
+        padding-left: 40px;
+        padding-right: 40px;
+        }
+
+        .navbar a.about{
+            color:red;
+        }
+
+        /* Change text color to orange on hover */
+        .navbar a:hover {
+        color: orange;
+        }
+
+
+        body{
+            background-color: rgb(241,179,56);
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="spingallery.html" >Gallery</a></li>
+        <li><a href="about.html" class="about">About</a></li>
+        </ul>
+    </div>
+<!--SOUND CLICK-->
+    <!-- Audio element -->
+    <audio id="click-sound" src="audio/rewind_sound.mp3" preload="auto"></audio>
+    <!-- Image element -->
+    <img id="click-image" src="images/vPlogo.png" alt="Click Image" class="click-image">
+
+    <!-- JavaScript to handle the click event -->
+    <script>
+        // Select the audio element
+        const clickSound = document.getElementById('click-sound');
+        // Select the image element
+        const clickImage = document.getElementById('click-image');
+
+        // Function to play the sound
+        function playSound() {
+            clickSound.play();
+        }
+
+        // Function to show the image at the click position
+        function showImage(event) {
+            // Get the click position
+            const x = event.clientX;
+            const y = event.clientY;
+
+            // Set the image position
+            clickImage.style.left = `${x}px`;
+            clickImage.style.top = `${y}px`;
+            clickImage.style.display = 'block';
+
+            // Hide the image after a short delay (e.g., 1 second)
+            setTimeout(() => {
+                clickImage.style.display = 'none';
+            }, 1000);
+        }
+
+        // Function to handle the click event
+        function handleClick(event) {
+            playSound();
+            showImage(event);
+        }
+
+        // Add an event listener to the document to listen for clicks
+        document.addEventListener('click', handleClick);
+    </script>
+</body>
+</html>
