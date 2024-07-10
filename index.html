@@ -1,79 +1,244 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.navbar {
-  display: flex; /* Use Flexbox layout */
-  background-color: #000000; /* Background color */
-  padding: 10px; /* Padding around the navbar */
-  font-family: 'Avenir', sans-serif; /* Use Avenir font */
-  position:fixed;
-  left:0;
-  right:0;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <style>
+    /* General styles */
+    body {
+      background-color: rgb(65, 154, 255);
+      font-family: 'Avenir', sans-serif;
+      margin: 0;
+    }
 
-.navbar ul {
-  list-style-type: none; /* Remove default list styles */
-  padding: 0;
-  margin: 0;
-  display: flex; /* Use Flexbox layout for the list */
-  width: 100%; /* Ensure the list takes up full width */
-  justify-content: space-between; /* Distribute items evenly along the main axis */
-}
+    .navbar {
+      display: flex;
+      background-color: #000000;
+      padding: 10px;
+      position: absolute;
+      left: 0;
+      right: 0;
+    }
 
-.navbar li {
-  margin: 0 10px; /* Add spacing between navigation items */
-}
+    .navbar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
 
-.navbar a {
-  text-decoration: none; /* Remove underline from links */
-  color: rgb(255, 255, 255); /* Set default text color */
-  font-size: 20pt;
-  font-weight: 500;
-  padding-left: 40px;
-  padding-right: 40px;
-}
+    .navbar li {
+      margin: 0 10px;
+    }
 
-/* Change text color to orange on hover */
-.navbar a:hover {
-  color: orange;
-}
+    .navbar a {
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      font-size: 20pt;
+      font-weight: 500;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
 
+    .navbar a.home {
+      color: red;
+    }
 
-body{
-    background-color: rgb(241,179,56);
-}
+    .navbar a:hover {
+      color: orange;
+    }
 
-h1{
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
-    font-size: 40px;
-    margin-top: -200;
-    font-weight: 500;
-    letter-spacing: -5px;
-}
-</style>
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 0;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Button container styles */
+    .button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .button-container img {
+      width: 300px;
+    }
+
+    .sound-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .sound-button img {
+      width: 50px;
+      height: 50px;
+      transition: filter 0.3s;
+    }
+
+    .sound-button.inverted img {
+      filter: invert(100%);
+    }
+
+    .sound-button:active {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
-
 <body>
 
- 
-
-<div class="navbar">
-  
+  <!-- Navigation Bar -->
+  <div class="navbar">
     <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="music.html">Music</a></li>
-    <li><a href="articles.html">Articles</a></li>
-    <li><a href="spingallery.html">Gallery</a></li>
-    <li><a href="about.html">About</a></li>
+      <li><a href="index.html" class="home">Home</a></li>
+      <li class="dropdown">
+        <a href="music.html" class="music">Music</a>
+        <div class="dropdown-content">
+          <a href="volunteerpark.html">Volunteer Park</a>
+          <a href="milovenus.html">Milo Venus</a>
+          <a href="ariokin.html">Ari Okin</a>
+        </div>
+      </li>
+      <li><a href="articles.html" class="articles">Articles</a></li>
+      <li><a href="spingallery.html" class="gallery">Gallery</a></li>
+      <li><a href="about.html" class="about">About</a></li>
     </ul>
-</div>
-<h1>homepage</h1>
-<img src="images/goldenfreddie.png" style="padding:100px;">
+  </div>
 
+  <!-- Content Section -->
+  <div class="pagecontainer">
+    <!-- Buttons for controlling the sounds -->
+    <div class="button-container">
+      <button id="play" class="sound-button"><img src="images/play.png" alt="Play All Sounds"></button>
+      <button id="stop" class="sound-button"><img src="images/stop.png" alt="Stop All Sounds"></button>
+      <button id="toggle1" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 1"></button>
+      <button id="toggle2" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 2"></button>
+      <button id="toggle3" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 3"></button>
+      <button id="toggle4" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 4"></button>
+      <button id="toggle5" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 5"></button>
+      <button id="toggle6" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 6"></button>
+      <button id="toggle7" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 7"></button>
+    </div>
 
+    <!-- Image map container -->
+    <div id="mapcontainer">
+      <img src="images/plaza.jpeg" alt="" usemap="#map">
+      <div id="imagemapcontainer">
+        <map name="map">
+          <area shape="poly" coords="406, 94, 409, 54, 380, 46, 418, 37, 443, 38, 444, 82" />
+          <area shape="poly" coords="99, 99, 93, 73, 50, 68, -1, 80, 0, 123, 102, 98, 101, 97, 98, 97" href="music.html" alt="building 3" title="building 3" />
+          <area shape="poly" coords="95, 170, 141, 171, 151, 161, 140, 138, 127, 137, 123, 143, 103, 139, 93, 150" href="bush" alt="bush" title="bush" />
+          <area shape="poly" coords="261, 100, 345, 115, 395, 96, 400, 55, 344, 47, 262, 62" href="building 1" alt="building 1" title="building 1" />
+          <area shape="poly" coords="115, 226, 186, 198, 231, 210, 268, 232, 227, 259, 147, 263" href="pool" alt="pool" title="pool" />
+        </map>
+      </div>
+    </div>
+  </div>
 
+  <!-- JavaScript for audio -->
+  <script>
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    const gainNodes = [];
+    const audioSources = [];
+    const audioUrls = [
+      'beats/Backyard.wav',
+      'beats/Bass.wav',
+      'beats/Clap.wav',
+      'beats/Knob.wav',
+      'beats/Lead.wav',
+      'beats/Metallic.wav',
+      'beats/Rhodes 1.wav'
+    ];
+
+    async function loadAudio(url) {
+      const response = await fetch(url);
+      const arrayBuffer = await response.arrayBuffer();
+      return await audioContext.decodeAudioData(arrayBuffer);
+    }
+
+    async function setupSounds(audioUrls) {
+      const buffers = await Promise.all(audioUrls.map(url => loadAudio(url)));
+
+      buffers.forEach(buffer => {
+        const source = audioContext.createBufferSource();
+        source.buffer = buffer;
+        source.loop = true;
+
+        const gainNode = audioContext.createGain();
+        gainNode.gain.value = 1;
+        source.connect(gainNode).connect(audioContext.destination);
+
+        gainNodes.push(gainNode);
+        audioSources.push(source);
+      });
+    }
+
+    function playAllSounds() {
+      audioSources.forEach((source, index) => {
+        if (source.playbackState === audioContext.PLAYING_STATE) {
+          const newSource = audioContext.createBufferSource();
+          newSource.buffer = source.buffer;
+          newSource.loop = true;
+          newSource.connect(gainNodes[index]);
+          audioSources[index] = newSource;
+          newSource.start(0);
+        } else {
+          source.start(0);
+        }
+      });
+    }
+
+    function stopAllSounds() {
+      audioSources.forEach(source => {
+        if (source.playbackState === audioContext.PLAYING_STATE) {
+          source.stop();
+        }
+      });
+    }
+
+    function toggleSound(index) {
+      const gainNode = gainNodes[index];
+      gainNode.gain.value = gainNode.gain.value === 0 ? 1 : 0;
+      document.getElementById(`toggle${index + 1}`).classList.toggle('inverted');
+    }
+
+    setupSounds(audioUrls);
+
+    document.getElementById('play').addEventListener('click', playAllSounds);
+    document.getElementById('stop').addEventListener('click', stopAllSounds);
+    document.getElementById('toggle1').addEventListener('click', () => toggleSound(0));
+    document.getElementById('toggle2').addEventListener('click', () => toggleSound(1));
+    document.getElementById('toggle3').addEventListener('click', () => toggleSound(2));
+    document.getElementById('toggle4').addEventListener('click', () => toggleSound(3));
+    document.getElementById('toggle5').addEventListener('click', () => toggleSound(4));
+    document.getElementById('toggle6').addEventListener('click', () => toggleSound(5));
+    document.getElementById('toggle7').addEventListener('click', () => toggleSound(6));
+  </script>
 </body>
 </html>

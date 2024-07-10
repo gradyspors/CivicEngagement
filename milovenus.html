@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Articles</title>
-</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-  body{
-    margin:0;
-  }
 .navbar {
   display: flex; /* Use Flexbox layout */
   background-color: #000000; /* Background color */
   padding: 10px; /* Padding around the navbar */
-  position:absolute;
+  font-family: 'Avenir', sans-serif; /* Use Avenir font */
+  position:fixed;
   left:0;
   right:0;
 }
@@ -41,15 +35,23 @@
   padding-right: 40px;
 }
 
-.navbar a.articles{
-  color:red;
-}
 /* Change text color to orange on hover */
 .navbar a:hover {
   color: orange;
 }
-.navbar a{
-  font-family: fantasy;
+
+
+body{
+    background-color: rgb(255, 129, 247);
+}
+
+h1{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-size: 40px;
+    margin-top: -200;
+    font-weight: 500;
+    letter-spacing: -5px;
 }
 
 /* Drop-down menu styles */
@@ -59,7 +61,7 @@
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 0;
+  z-index: 1;
 }
 
 .dropdown-content a {
@@ -76,28 +78,32 @@
 .dropdown:hover .dropdown-content {
   display: block; /* Show the drop-down menu on hover */
 }
-
 </style>
 </head>
 
 <body>
-  <div class="navbar">
+
+ 
+
+<div class="navbar">
+  
     <ul>
-      <li><a href="index.html" class="home">Home</a></li>
-      <li class="dropdown">
-        <a href="music.html" class="music">Music</a>
-        <div class="dropdown-content">
+    <li><a href="index.html">Home</a></li>
+    <li class="dropdown">
+      <a href="music.html">Music</a>
+      <div class="dropdown-content">
           <a href="volunteerpark.html">Volunteer Park</a>
           <a href="milovenus.html">Milo Venus</a>
-          <a href="ariokin.html">Ari Okin</a>
-        </div>
-      </li>
-      <li><a href="articles.html" class="articles">Articles</a></li>
-      <li><a href="spingallery.html" class="gallery">Gallery</a></li>
-      <li><a href="about.html" class="about">About</a></li>
+      </div>
+  </li>
+    <li><a href="articles.html">Articles</a></li>
+    <li><a href="spingallery.html">Gallery</a></li>
+    <li><a href="about.html">About</a></li>
     </ul>
-  </div>
- 
-</body>
+</div>
+<h1>Milo Venus</h1>
 
+
+
+</body>
 </html>

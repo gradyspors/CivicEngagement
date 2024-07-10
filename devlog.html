@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Development Log</title>
+    <style>
+        .navbar {
+            display: flex; /* Use Flexbox layout */
+            background-color: #000000; /* Background color */
+            padding: 10px; /* Padding around the navbar */
+            font-family: 'Avenir', sans-serif; /* Use Avenir font */
+            position: absolute;
+            left: 0;
+            right: 0;
+            flex-wrap: nowrap; /* Prevent wrapping of items */
+            overflow-x: auto; /* Allow horizontal scrolling if needed */
+        }
+
+        .navbar ul {
+            list-style-type: none; /* Remove default list styles */
+            padding: 0;
+            margin: 0;
+            display: flex; /* Use Flexbox layout for the list */
+            width: 100%; /* Ensure the list takes up full width */
+            justify-content: space-between; /* Distribute items evenly along the main axis */
+            flex-wrap: nowrap; /* Prevent wrapping of items */
+        }
+
+        .navbar li {
+            margin: 0 10px; /* Add spacing between navigation items */
+            white-space: nowrap; /* Prevent text wrapping */
+        }
+
+        .navbar a {
+            text-decoration: none; /* Remove underline from links */
+            color: rgb(255, 255, 255); /* Set default text color */
+            font-size: 20pt;
+            font-weight: 500;
+            padding-left: 40px;
+            padding-right: 40px;
+            white-space: nowrap; /* Prevent text wrapping */
+        }
+
+        .navbar a.about {
+            color: red;
+        }
+
+        /* Change text color to orange on hover */
+        .navbar a:hover {
+            color: orange;
+        }
+
+        /* Drop-down menu styles */
+        .dropdown-content {
+            display: none; /* Hidden by default */
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block; /* Show the drop-down menu on hover */
+        }
+
+        .container {
+            margin: 0 auto;
+            max-width: 800px; /* Adjust this value as needed */
+            padding: 100px 40px; /* Optional: Add padding for better readability */
+            background-color: rgb(255, 255, 255);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        @font-face {
+            font-family: BummerCondensedItalic;
+            src: url(BummerCondensedItalic-RaxM.otf);
+        }
+
+        h1 {
+            font-family: BummerCondensedItalic;
+            letter-spacing: 10px;
+            font-size: 60pt;
+            text-align: center;
+        }
+
+        h1:hover {
+            transform: rotateY(150deg);
+            color: rgb(0, 255, 47);
+            background-color: black;
+            cursor: default;
+        }
+
+        h2 {
+            font-family: monospace;
+        }
+
+        h3 {
+            font-family: monospace;
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        body {
+            background-image: url(https://64.media.tumblr.com/660e1bf2356436a781610bbda1a069bf/tumblr_of4a0oMfkv1vfoqtxo1_1280.gif);
+            background-repeat:repeat;
+            color: #000; /* Ensure text is readable */
+        }
+
+        p {
+            font-family: monospace;
+        }
+
+        .buttoncenter {
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 900px) {
+
+            .container{
+                max-width: 70%;
+            }
+            .navbar{
+                width:100%;
+            }
+            .navbar a {
+                font-size: 16pt;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .container {
+                padding: 50px 20px;
+            }
+
+            h1 {
+                font-size: 30pt;
+                padding-top:30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+
+            .conainter{
+                max-width:70%;
+            }
+            .navbar{
+                width:100%;
+            }
+            .navbar a {
+                font-size: 10pt;
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 20pt;
+            
+            }
+
+            .container {
+                padding: 20px 10px;
+            }
+        }
+    </style>
+    <script>
+        var txt1 = 'Hello World. Welcome to the dev log. This is going to be where we put the updates of the site as we build them.';
+        var txt2 = 'What is a development log? (Internet, computing) A log (or blog, vlog, etc.) that updates the audience on the development progress of something, usually a video game, website, or app.';
+        var speed = 50;
+        var i = 0;
+        var j = 0;
+
+        function typeWriter1() {
+            if (j < txt1.length) {
+                document.getElementById("demo").innerHTML += txt1.charAt(j);
+                j++;
+                setTimeout(typeWriter1, speed);
+            }
+        }
+
+        function typeWriter2() {
+            if (i < txt2.length) {
+                document.getElementById("secondbutton").innerHTML += txt2.charAt(i);
+                i++;
+                setTimeout(typeWriter2, speed);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html" class="home">Home</a></li>
+            <li class="dropdown">
+                <a href="music.html" class="music">Music</a>
+                <div class="dropdown-content">
+                    <a href="volunteerpark.html">Volunteer Park</a>
+                    <a href="milovenus.html">Milo Venus</a>
+                    <a href="ariokin.html">Ari Okin</a>
+                </div>
+            </li>
+            <li><a href="articles.html" class="articles">Articles</a></li>
+            <li><a href="spingallery.html" class="gallery">Gallery</a></li>
+            <li><a href="about.html" class="about">About</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h1>Development Log</h1>
+        <div class="buttoncenter">
+            <div>
+                <button onclick="typeWriter1()">Click me</button>
+                <p id="demo"></p>
+            </div>
+            <button onclick="typeWriter2()">?</button>
+            <p id="secondbutton"></p>
+        </div>
+
+        <h2>July 9, 2024</h2>
+        <p>
+            Today I got the audios on the home page to play in sync!
+            This was a huge hurdle for bc it is written in JavaScript and I am only a baby developer.
+            I knew that I had to use an audio API and with enough fidgeting with chap gpt I finally got it to behave how we wanted it to.
+            <br><br>
+            <img src="images/homepage-july9.png">
+            <br><br>
+            I also got the image map to work which is gonna be so awesome.
+            I’m very delighted with the progress made today! Thank you adderall!
+        </p>
+
+        <h2>May 25, 2024</h2>
+        <p>
+            So far after a couple of preliminary meetings and brainstorming, this is what the site looks like in its first stages:
+            <br>
+        </p>
+        <img src="devlog/homepage_5:25:2024.png">
+    </div>
+</body>
+</html>
