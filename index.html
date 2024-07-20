@@ -104,11 +104,18 @@
 
     .sound-button.inverted img {
       filter: invert(100%);
+      
     }
 
     .sound-button:active {
       transform: scale(1.05);
+      
     }
+
+  
+
+
+
   </style>
 </head>
 <body>
@@ -152,10 +159,10 @@
       <div id="imagemapcontainer">
         <map name="map">
           <area shape="poly" coords="406, 94, 409, 54, 380, 46, 418, 37, 443, 38, 444, 82" />
-          <area shape="poly" coords="99, 99, 93, 73, 50, 68, -1, 80, 0, 123, 102, 98, 101, 97, 98, 97" href="music.html" alt="building 3" title="building 3" />
+          <area shape="poly" coords="99, 99, 93, 73, 50, 68, -1, 80, 0, 123, 102, 98, 101, 97, 98, 97" href="spingallery.html" alt="building 3" title="building 3" />
           <area shape="poly" coords="95, 170, 141, 171, 151, 161, 140, 138, 127, 137, 123, 143, 103, 139, 93, 150" href="bush" alt="bush" title="bush" />
           <area shape="poly" coords="261, 100, 345, 115, 395, 96, 400, 55, 344, 47, 262, 62" href="building 1" alt="building 1" title="building 1" />
-          <area shape="poly" coords="115, 226, 186, 198, 231, 210, 268, 232, 227, 259, 147, 263" href="pool" alt="pool" title="pool" />
+          <area shape="poly" coords="115, 226, 186, 198, 231, 210, 268, 232, 227, 259, 147, 263" href="devlog.html" alt="pool" title="pool" />
         </map>
       </div>
     </div>
@@ -227,6 +234,8 @@
       gainNode.gain.value = gainNode.gain.value === 0 ? 1 : 0;
       document.getElementById(`toggle${index + 1}`).classList.toggle('inverted');
     }
+
+   
 
     setupSounds(audioUrls);
 
