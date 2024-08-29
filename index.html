@@ -209,14 +209,9 @@
     function playAllSounds() {
       audioSources.forEach((source, index) => {
         if (source.playbackState === audioContext.PLAYING_STATE) {
-          const newSource = audioContext.createBufferSource();
-          newSource.buffer = source.buffer;
-          newSource.loop = true;
-          newSource.connect(gainNodes[index]);
-          audioSources[index] = newSource;
-          newSource.start(0);
+          source.start();
         } else {
-          source.start(0);
+          console.error("source.playbackState != audioContext.PLAYING_STATE on index: " + index);
         }
       });
     }
@@ -249,5 +244,8 @@
     document.getElementById('toggle6').addEventListener('click', () => toggleSound(5));
     document.getElementById('toggle7').addEventListener('click', () => toggleSound(6));
   </script>
+
+
+<img src="images/testmap2.png" style="width:70%;">
 </body>
 </html>
