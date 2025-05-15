@@ -5,76 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Development Log</title>
     <style>
-        .navbar {
-            display: flex; /* Use Flexbox layout */
-            background-color: #000000; /* Background color */
-            padding: 10px; /* Padding around the navbar */
-            font-family: 'Avenir', sans-serif; /* Use Avenir font */
-            position: absolute;
-            left: 0;
-            right: 0;
-            flex-wrap: nowrap; /* Prevent wrapping of items */
-            overflow-x: auto; /* Allow horizontal scrolling if needed */
-        }
-
-        .navbar ul {
-            list-style-type: none; /* Remove default list styles */
-            padding: 0;
-            margin: 0;
-            display: flex; /* Use Flexbox layout for the list */
-            width: 100%; /* Ensure the list takes up full width */
-            justify-content: space-between; /* Distribute items evenly along the main axis */
-            flex-wrap: nowrap; /* Prevent wrapping of items */
-        }
-
-        .navbar li {
-            margin: 0 10px; /* Add spacing between navigation items */
-            white-space: nowrap; /* Prevent text wrapping */
-        }
-
-        .navbar a {
-            text-decoration: none; /* Remove underline from links */
-            color: rgb(255, 255, 255); /* Set default text color */
-            font-size: 20pt;
-            font-weight: 500;
-            padding-left: 40px;
-            padding-right: 40px;
-            white-space: nowrap; /* Prevent text wrapping */
-        }
-
-        .navbar a.about {
-            color: red;
-        }
-
-        /* Change text color to orange on hover */
-        .navbar a:hover {
-            color: orange;
-        }
-
-        /* Drop-down menu styles */
-        .dropdown-content {
-            display: none; /* Hidden by default */
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block; /* Show the drop-down menu on hover */
-        }
+       
 
         .container {
             margin: 0 auto;
@@ -180,6 +111,16 @@
                 padding: 20px 10px;
             }
         }
+
+        .natstyle{
+            color: rgb(149, 0, 255);
+           
+        }
+
+        .gradystyle{
+            
+            color: blue;
+        }
     </style>
     <script>
         var txt1 = 'Hello World. Welcome to the dev log. This is going to be where we put the updates of the site as we build them.';
@@ -207,22 +148,7 @@
 </head>
 
 <body>
-    <div class="navbar">
-        <ul>
-            <li><a href="index.html" class="home">Home</a></li>
-            <li class="dropdown">
-                <a href="music.html" class="music">Music</a>
-                <div class="dropdown-content">
-                    <a href="volunteerpark.html">Volunteer Park</a>
-                    <a href="milovenus.html">Milo Venus</a>
-                    <a href="ariokin.html">Ari Okin</a>
-                </div>
-            </li>
-            <li><a href="articles.html" class="articles">Articles</a></li>
-            <li><a href="spingallery.html" class="gallery">Gallery</a></li>
-            <li><a href="about.html" class="about">About</a></li>
-        </ul>
-    </div>
+  
 
     <div class="container">
         <h1>Development Log</h1>
@@ -235,11 +161,32 @@
             <p id="secondbutton"></p>
         </div>
 
+        <h2>May 14, 2025</h2>
+
+        <p>Getting back into the swing of things</p>
+
+        <p class="natstyle">Hi everyone, it’s Natalie. Now that I am post-grad I have time to get back into the swing of things. It was nice to get a refresher on where we left off and the things we want to get started with next. The running plan right now is to meet weekly and make a plan for the following weeks so that hopefully we can launch this shit by midsummer. Yuuuuuuupppppppp. Exciting shit. I am excited to get back into coding and figuring stuff out again. It will be good for my brain and good to get things accomplished. I want to finish the map and get the navigation working so that it starts feeling like you can move around the site. I think I’m going to focus on getting the frameworks in there first, and then building out the styling. Talk soon team, Natalie.</p>
+
+        <p class="gradystyle">
+        Hello, Grady here. Today was a great reset and restart for thinking about this project again. I believe we have some excellent ideas coming down the line. Some of which are a scrolling gallery home page, a statue of the civic engagement logo in the navigation map, and background for the beat composer. Also starting to think about buttons and iconography language for the site; obviously it will be inspired by recording equipment. Eventide H3000 from panel design, button specifically, are so fresh and so clean. Circle inside square. Black and yellow black and yellow. Does anyone know how to code a loading screen??????? I’ve decided to make content surrounding the launch of civic-engagnement.net where we can go into detail about the locations/creative functions of the website and how cool they are. See you next time.  </p>
+       <img src="images/dev_log_photos/h3000.PNG" alt="h3000 buttons">
+       <img src="images/dev_log_photos/voyetra.jpeg" alt="voyetra keyboard">
+        <h2>February 23, 2025</h2>
+
+        <p>Today we decided to move the development log into a master google docs for our project to easily give updates. </p>
+        <p class="natstyle">Hi team, Natalie here. Today I reworked the nav bar into a polished, more awesome version. Also did the discography page into an image grid with the titles and artist names. Soon we are going to add the icons to link to the artists’ personal pages. I have overall more styling to do kinda everywhere but having the nav bar be functional and clean makes it a lot easier to understand. 
+        Grady wrote the first article today so I put that into the articles page. It was a lot of fun to style different texts, like with the < em > tag and the < ul > tag and < il > tags. It’s a lot easier when you have the content already. That is the way to web design. It makes it so much swifter. Making everything responsive to different media sizes is always a tricky part but an important 
+        one nonetheless. A lot was accomplished today! Yay February! 
+        </p>
+
+        <p class="gradystyle">I am Grady. Today I made an attempt to edit code for a scrolling page of images to become the landing page for the gallery tab. Using java script for moving and interactive elements is something that still confuses me greatly. Needless to say, I was not successful, so I will need to ask Natalie for help to accomplish this. </p>
+
+        
         <h2>July 9, 2024</h2>
-        <p>
+        <p class="natstyle">
             Today I got the audios on the home page to play in sync!
             This was a huge hurdle for bc it is written in JavaScript and I am only a baby developer.
-            I knew that I had to use an audio API and with enough fidgeting with chap gpt I finally got it to behave how we wanted it to.
+            I knew that I had to use an audio API and with enough fidgeting I finally got it to behave how we wanted it to.
             <br><br>
             <img src="images/homepage-july9.png">
             <br><br>
@@ -248,7 +195,7 @@
         </p>
 
         <h2>May 25, 2024</h2>
-        <p>
+        <p class="natstyle">
             So far after a couple of preliminary meetings and brainstorming, this is what the site looks like in its first stages:
             <br>
         </p>
