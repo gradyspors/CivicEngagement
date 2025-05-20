@@ -1,79 +1,63 @@
-/* NAV styling*/
+/* NAV styling */
 ul {
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    list-style-type: none;
-    padding: 10px; 
-   overflow: hidden;
-   border:black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  list-style-type: none;
+  padding: 10px;
+  margin-top: 0;
+  overflow: hidden;
+  float: right;
 }
 
 li {
-    /*this makes the border */
-    border: 1px solid black;
-
+  border: 1px solid black;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* Nav buttons */
 li a {
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-    text-align: initial; 
-    justify-content: center;
-    padding: 14px 16px; 
-    margin: 10px;
-    text-decoration:none; 
-    background-color: #E4D3B2; 
-    border-radius: 5px;
-    width:60px;
-    height:60px;
-    font-family: 'Avenir', sans-serif;
-    font-weight: 600;
-    letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  padding: 10px;
+
+  background-color: #E4D3B2;
+  border-radius: 5px;
+
+  font-family: 'Avenir', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-image 0.2s ease;
 }
 
-
-li a:hover{
-  color:rgb(55, 49, 49);
+li a:hover {
+  color: rgb(55, 49, 49);
+  background-image: url("images/NAVbuttonengaged.png");
+  background-size: cover;
+  transform: scale(0.96) translateY(-2px);
+  box-shadow: 0 10px 10px 0 #000000;
 }
 
-li .navmusic:hover{
-
-    background-image: url("images/NAVbuttonengaged.png");
-    background-size:cover;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 10px 0 #000000;
-    transform: scale(.96);
+li .navmusic:hover,
+li .navarticles:hover,
+li .navgallery:hover,
+li .navabout:hover {
+  background-image: url("images/NAVbuttonengaged.png");
+  background-size: cover;
+  transform: scale(0.96) translateY(-2px);
+  box-shadow: 0 10px 10px 0 #000000;
 }
-
-li .navarticles:hover{
-
-    background-image: url("images/NAVbuttonengaged.png");
-    background-size:cover;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 10px 0 #000000;
-    transform: scale(.96);
-
-}
-
-li .navgallery:hover{
-    background-image: url("images/NAVbuttonengaged.png");
-    background-size:cover;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 10px 0 #000000;
-    transform: scale(.96);
-
-}
-
-li .navabout:hover{
-
-    background-image: url("images/NAVbuttonengaged.png");
-    background-size:cover;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 10px 0 #000000;
-    transform: scale(.96);
-
