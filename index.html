@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="index.css">
   <title>Home Page</title>
   <style>
 
@@ -80,52 +81,19 @@
 
     /* General styles */
     body {
-      background-color: rgb(65, 154, 255);
+      background-color: #353A3E;
       font-family: 'Avenir', sans-serif;
       margin: 0;
+    }
+
+    *{
+      color:orange;
     }
 
 
  
 
-    /* Button container styles */
-    .button-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      height: 100vh;
-      margin: 0;
-    }
-
-    .button-container img {
-      width: 300px;
-    }
-
-    .sound-button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      outline: none;
-    }
-
-    .sound-button img {
-      width: 50px;
-      height: 50px;
-      transition: filter 0.3s;
-    }
-
-    .sound-button.inverted img {
-      filter: invert(100%);
-      
-    }
-
-    .sound-button:active {
-      transform: scale(1.05);
-      
-    }
-
-  
+    
 
 
 
@@ -144,7 +112,7 @@
       <div class="dropdown-content">
         <a href="discography.html">Discography</a>
         <a href="#">Radio</a>
-        <a href="#">Beat Composer</a>
+        <a href="beatcomposer.html">Beat Composer</a>
       </div>
       
     </div> 
@@ -164,121 +132,33 @@
     </div>
 </div>
 
-<!-- Nav Bar copy and paste end -->
 
- 
-  <!-- Content Section -->
-  <div class="pagecontainer">
-    <!-- Buttons for controlling the sounds -->
-    <div class="button-container">
-      <button id="play" class="sound-button"><img src="images/play.png" alt="Play All Sounds"></button>
-      <button id="stop" class="sound-button"><img src="images/stop.png" alt="Stop All Sounds"></button>
-      <button id="toggle1" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 1"></button>
-      <button id="toggle2" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 2"></button>
-      <button id="toggle3" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 3"></button>
-      <button id="toggle4" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 4"></button>
-      <button id="toggle5" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 5"></button>
-      <button id="toggle6" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 6"></button>
-      <button id="toggle7" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 7"></button>
-    </div>
+<div class="navcontainer">
+  <nav>
+      <ul>
+          <li><a class="navmusic" href="discography.html">MUSIC</a></li>
+          <li><a class="navarticles" href="articles.html">ARTICLES</a></li>
+          <li><a class="navgallery" href="gallery.html">GALLERY</a></li>
+          <li><a class="navabout" href="about.html">ABOUT</a></li>
+          
+      </ul>
 
-    <!-- Image map container -->
-    <div id="mapcontainer">
-      <img src="images/plaza.jpeg" alt="" usemap="#map">
-      <div id="imagemapcontainer">
-        <map name="map">
-          <area shape="poly" coords="406, 94, 409, 54, 380, 46, 418, 37, 443, 38, 444, 82" />
-          <area shape="poly" coords="99, 99, 93, 73, 50, 68, -1, 80, 0, 123, 102, 98, 101, 97, 98, 97" href="spingallery.html" alt="building 3" title="building 3" />
-          <area shape="poly" coords="95, 170, 141, 171, 151, 161, 140, 138, 127, 137, 123, 143, 103, 139, 93, 150" href="bush" alt="bush" title="bush" />
-          <area shape="poly" coords="261, 100, 345, 115, 395, 96, 400, 55, 344, 47, 262, 62" href="building 1" alt="building 1" title="building 1" />
-          <area shape="poly" coords="115, 226, 186, 198, 231, 210, 268, 232, 227, 259, 147, 263" href="devlog.html" alt="pool" title="pool" />
-        </map>
-      </div>
-    </div>
-  </div>
+  </nav>
+</div>
 
-  <!-- JavaScript for audio -->
-  <script>
-    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    const gainNodes = [];
-    const audioSources = [];
-    const audioUrls = [
-      'beats/Backyard.wav',
-      'beats/Bass.wav',
-      'beats/Clap.wav',
-      'beats/Knob.wav',
-      'beats/Lead.wav',
-      'beats/Metallic.wav',
-      'beats/Rhodes 1.wav'
-    ];
+<h2>
+  Civic Engagement Directory
+</h2>
+<h3>
+Select a Building To Begin
+</h3>
 
-    async function loadAudio(url) {
-      const response = await fetch(url);
-      const arrayBuffer = await response.arrayBuffer();
-      return await audioContext.decodeAudioData(arrayBuffer);
-    }
-
-    async function setupSounds(audioUrls) {
-      const buffers = await Promise.all(audioUrls.map(url => loadAudio(url)));
-
-      buffers.forEach(buffer => {
-        const source = audioContext.createBufferSource();
-        source.buffer = buffer;
-        source.loop = true;
-
-        const gainNode = audioContext.createGain();
-        gainNode.gain.value = 1;
-        source.connect(gainNode).connect(audioContext.destination);
-
-        gainNodes.push(gainNode);
-        audioSources.push(source);
-      });
-    }
-
-    function playAllSounds() {
-      audioSources.forEach((source, index) => {
-        if (source.playbackState === audioContext.PLAYING_STATE) {
-          source.start();
-        } else {
-          console.error("source.playbackState != audioContext.PLAYING_STATE on index: " + index);
-        }
-      });
-    }
-
-    function stopAllSounds() {
-      audioSources.forEach(source => {
-        if (source.playbackState === audioContext.PLAYING_STATE) {
-          source.stop();
-        }
-      });
-    }
-
-    function toggleSound(index) {
-      const gainNode = gainNodes[index];
-      gainNode.gain.value = gainNode.gain.value === 0 ? 1 : 0;
-      document.getElementById(`toggle${index + 1}`).classList.toggle('inverted');
-    }
-
-   
-
-    setupSounds(audioUrls);
-
-    document.getElementById('play').addEventListener('click', playAllSounds);
-    document.getElementById('stop').addEventListener('click', stopAllSounds);
-    document.getElementById('toggle1').addEventListener('click', () => toggleSound(0));
-    document.getElementById('toggle2').addEventListener('click', () => toggleSound(1));
-    document.getElementById('toggle3').addEventListener('click', () => toggleSound(2));
-    document.getElementById('toggle4').addEventListener('click', () => toggleSound(3));
-    document.getElementById('toggle5').addEventListener('click', () => toggleSound(4));
-    document.getElementById('toggle6').addEventListener('click', () => toggleSound(5));
-    document.getElementById('toggle7').addEventListener('click', () => toggleSound(6));
-  </script>
 
 
 <img src="images/testmap2.png" style="width:70%;">
 
-<a href="theater.html">theater just so u can see</a>
-<a href="articles.html"> ARTICLES</a>
-<a href="discography">discography</a>
+
+
+<h1><a href="graveyard.html">graveyard</a></h1>
 </body>
 </html>

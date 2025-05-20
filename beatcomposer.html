@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beat Composer</title>
+<style>
+
+body {
+      background-color: rgb(65, 154, 255);
+      font-family: 'Avenir', sans-serif;
+      margin: 0;
+    }
+
+ /* Button container styles */
+ .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      justify-items: center;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+      margin: 0;
+    }
+
+    .button-container img {
+      width: 300px;
+    }
+
+    .sound-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .sound-button img {
+      width: 50px;
+      height: 50px;
+      transition: filter 0.3s;
+    }
+
+    .sound-button.inverted img {
+      filter: invert(100%);
+      
+    }
+
+    .sound-button:active {
+      transform: scale(1.05);
+      
+    }
+
+
+
+
+
+</style>
+
+</head>
+<body>
+    <h1>Beat Composer</h1>
+
+    <div class="button-container">
+        <button id="play" class="sound-button"><img src="images/play.png" alt="Play All Sounds"></button>
+        <button id="stop" class="sound-button"><img src="images/stop.png" alt="Stop All Sounds"></button>
+        <button id="toggle1" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 1"></button>
+        <button id="toggle2" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 2"></button>
+        <button id="toggle3" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 3"></button>
+        <button id="toggle4" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 4"></button>
+        <button id="toggle5" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 5"></button>
+        <button id="toggle6" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 6"></button>
+        <button id="toggle7" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 7"></button>
+      </div>
+
+
+<!-- JavaScript for audio -->
+  <script>
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    const gainNodes = [];
+    const audioSources = [];
+    const audioUrls = [
+      'beats/Backyard.wav',
+      'beats/Bass.wav',
+      'beats/Clap.wav',
+      'beats/Knob.wav',
+      'beats/Lead.wav',
+      'beats/Metallic.wav',
+      'beats/Rhodes 1.wav'
+    ];
+
+    async function loadAudio(url) {
+      const response = await fetch(url);
+      const arrayBuffer = await response.arrayBuffer();
+      return await audioContext.decodeAudioData(arrayBuffer);
+    }
+
+    async function setupSounds(audioUrls) {
+      const buffers = await Promise.all(audioUrls.map(url => loadAudio(url)));
+
+      buffers.forEach(buffer => {
+        const source = audioContext.createBufferSource();
+        source.buffer = buffer;
+        source.loop = true;
+
+        const gainNode = audioContext.createGain();
+        gainNode.gain.value = 1;
+        source.connect(gainNode).connect(audioContext.destination);
+
+        gainNodes.push(gainNode);
+        audioSources.push(source);
+      });
+    }
+
+    function playAllSounds() {
+      audioSources.forEach((source, index) => {
+        if (source.playbackState === audioContext.PLAYING_STATE) {
+          source.start();
+        } else {
+          console.error("source.playbackState != audioContext.PLAYING_STATE on index: " + index);
+        }
+      });
+    }
+
+    function stopAllSounds() {
+      audioSources.forEach(source => {
+        if (source.playbackState === audioContext.PLAYING_STATE) {
+          source.stop();
+        }
+      });
+    }
+
+    function toggleSound(index) {
+      const gainNode = gainNodes[index];
+      gainNode.gain.value = gainNode.gain.value === 0 ? 1 : 0;
+      document.getElementById(`toggle${index + 1}`).classList.toggle('inverted');
+    }
+
+   
+
+    setupSounds(audioUrls);
+
+    document.getElementById('play').addEventListener('click', playAllSounds);
+    document.getElementById('stop').addEventListener('click', stopAllSounds);
+    document.getElementById('toggle1').addEventListener('click', () => toggleSound(0));
+    document.getElementById('toggle2').addEventListener('click', () => toggleSound(1));
+    document.getElementById('toggle3').addEventListener('click', () => toggleSound(2));
+    document.getElementById('toggle4').addEventListener('click', () => toggleSound(3));
+    document.getElementById('toggle5').addEventListener('click', () => toggleSound(4));
+    document.getElementById('toggle6').addEventListener('click', () => toggleSound(5));
+    document.getElementById('toggle7').addEventListener('click', () => toggleSound(6));
+  </script>
+</body>
+</html>
