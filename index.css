@@ -15,15 +15,21 @@ ul {
   margin-top: 0;
   overflow: hidden;
   float: right;
+  
 }
 
 li {
-  border: 1px solid black;
+
 }
 
 a {
   color: black;
   text-decoration: none;
+  font-style: italic;
+  padding: 5px;
+  border: 2px solid #86939d; 
+
+
 }
 
 /* Nav buttons */
@@ -33,17 +39,20 @@ li a {
   justify-content: center;
   text-align: center;
 
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   margin: 10px;
   padding: 10px;
 
-  background-color: #E4D3B2;
+  background-color: #f0dbb1;
+  box-shadow: 0 10px 10px 0 #000000;
+  box-shadow: 5px 5px 0px rgb(0, 0, 0);
+
 
   font-family: 'Avenir', sans-serif;
   font-weight: 600;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
+  font-size: 0.8rem;
+  letter-spacing: .5px;
 
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-image 0.2s ease;
 }
@@ -53,7 +62,9 @@ li a:hover {
   background-image: url("images/NAVbuttonengaged.png");
   background-size: cover;
   transform: scale(0.96) translateY(-2px);
-  box-shadow: 0 10px 10px 0 #000000;
+  box-shadow: 2px;
+
+
 }
 
 li .navmusic:hover,
@@ -62,8 +73,9 @@ li .navgallery:hover,
 li .navabout:hover {
   background-image: url("images/NAVbuttonengaged.png");
   background-size: cover;
-  transform: scale(0.96) translateY(-2px);
-  box-shadow: 0 10px 10px 0 #000000;
+  transform: scale(0.9) translateY(2px);
+  
+  transition: all 0.2s ease;
 }
 
 footer{
