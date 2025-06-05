@@ -1,8 +1,8 @@
 /* NAV styling */
 
 .LgogToHome a {
-  border: none;
-    padding: 10px;
+  order: none;
+  padding: 10px;
 }
 ul {
   display: flex;
