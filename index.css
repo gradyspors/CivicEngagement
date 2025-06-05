@@ -1,7 +1,7 @@
 /* NAV styling */
 
-.LgogToHome{
-
+.LgogToHome a {
+  border: none;
     padding: 10px;
 }
 ul {
