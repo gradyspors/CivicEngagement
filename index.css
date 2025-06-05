@@ -81,11 +81,15 @@ li .navabout:hover {
 footer{
     text-align: center;
     display: flex;    
-    flex-wrap: wrap;
+    flex-wrap:wrap;
     justify-content: center;
-    left: 0;
     bottom: 0;
+    margin: auto;
 
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    background-color: #b7ccda;
 
    img{
         max-width: 40px;
@@ -99,5 +103,14 @@ footer{
     }
 
 
+}
+
+@media screen and (max-width: 600px) {
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+  }
 }
 
