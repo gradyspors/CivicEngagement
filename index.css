@@ -1,9 +1,12 @@
 /* NAV styling */
 
-.LgogToHome a {
+.LgogToHome a, .LgogToHome {
   border: none;
-  padding: 10px;
+  margin:10;
+  padding: 10;
+  height: 54px;
 }
+
 ul {
   display: flex;
   flex-direction: row;
@@ -85,7 +88,6 @@ footer{
     justify-content: center;
     bottom: 0;
     margin: auto;
-
     width: 100%;
     text-align: center;
     padding: 15px;
@@ -105,12 +107,12 @@ footer{
 
 }
 
-@media screen and (max-width: 1000px) {
+@media  (max-width: 1200px) {
   footer {
-    position: fixed;
+    position:fixed;
+    right:0;
     bottom: 0;
     left: 0;
-    z-index: 1000;
   }
 }
 
