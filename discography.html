@@ -1,178 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discography</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discography</title>
+ <link rel="stylesheet" href="index.css">
 
-    <style>
+ <nav>
+    <ul>
+      <li class="backarrow"><a href="index.html"><img src="images/buttons/BackArrow.svg"></a></li>
 
-        h3{
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            margin: 5px;
-            color:blue;
-            text-align: center;
-            font-weight: 500;
-        }
+      <li class="navhome"><a href="index.html"><img src="images/buttons/HomeButtonSquare.svg" alt="to home"></a></li>
 
-        h4{
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            margin: 5px;
-            font-weight: 400;
-            color:blue;
-            text-align: center;
-        }
+      <li class="navbuttons">
+          <a class="navmusic" href="discography.html">MUSIC</a>
+          <a class="navarticles" href="articles.html">ARTICLES</a>
+          <a class="navgallery" href="gallery.html">GALLERY</a>
+          <a class="navabout" href="about.html">ABOUT</a>
+      </li>
+  </ul>
+</nav>
 
-        .flex-container {
-        
-        display: flex;
 
-        justify-content: space-evenly; 
-        align-items: stretch; 
-        /* flex-flow: row wrap; */ 
-        flex-direction: row; 
-        flex-wrap: wrap; 
-        align-content: space-around;
-        background-image:radial-gradient(rgb(219, 219, 219), rgb(149, 149, 149));
-        height: 100%;
-        padding: 15px;
-        gap: 10px;
-        }
-    </style>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      background-color: #f0f0f0;
+      background-image: radial-gradient(rgb(219, 219, 219), rgb(95, 41, 41));
+    }
+   
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+      color: #222;
+    }
+
+    h3, h4 {
+      margin: 5px 0;
+      color: blue;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    .sort-buttons {
+      text-align: center;
+      margin: 15px 0;
+    }
+
+    .sort-buttons button {
+      margin: 0 5px;
+      padding: 6px 12px;
+      background-color: #e0e0ff;
+      border: 1px solid #999;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .sort-buttons button:hover {
+      background-color: #d0d0ff;
+    }
+
+    .flex-container {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      gap: 15px;
+      
+      padding: 20px;
+    }
+
+    .album {
+      width: 300px;
+      text-align: center;
+    }
+
+    .album img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease;
+    }
+
+    .album img:hover {
+      transform: scale(1.03);
+    }
+  
+  
+  </style>
+
+  
 </head>
 <body>
+  <h1>Discography</h1>
 
-    <h1>Discography</h1>
+  <div class="sort-buttons">
+    <button onclick="sortAlbums('title')">Sort by Title</button>
+    <button onclick="sortAlbums('artist')">Sort by Artist</button>
+    <button onclick="sortAlbums('year')">Sort by Year</button>
+  </div>
 
-    <div class="flex-container">
-              
-        
+  <div class="flex-container" id="albumContainer"></div>
 
-            <div class="item1">
-                <img class=cover style="width:300px; height:300px; " src="images/discography cover/AStrawBridgeFalls_BurkeRanelin_Cover.jpg" onclick="location.href='.html'">
-                <h3>A Strawbridge Falls </h3>
-                <h4>Burke Ranelin</h4>
+  <div class="footer">
+    <div class="row">
+        <div class="col">
+            <div class="col-content">
+                <h1 class="footer-title">Civic Engagement</h1> <br>
+                <h2 class="footer-subtitle"><a href="civicengagementwec@gmail.com">Contact Us</a></h2>
             </div>
+        </div>
 
-            <div class="item2">
-                <img class=cover style="width:300px" src="images/discography cover/Awesum!_NolanKaine_Mix.jpg" onclick="location.href='.html'">
-                <h3>Awesum!</h3>
-                <h4>Nolan Kaine</h4>
-            </div>
-
-            <div class="item3">
-                <img class=cover style="width:300px; height:300px;" src="images/discography cover/BurkesCurse_BurkeRanelin_Cover.JPG" onclick="location.href='.html'">
-                <h3>Burkes Curse</h3>
-                <h4>Burke Ranelin</h4>
-            </div>
-
-            <div class="item4">
-                <img class=cover style="width:300px; height:300px;" src="images/discography cover/CatoKilla_CatoKilla_Cover.JPG" onclick="location.href='.html'">
-                <h3> CatoKilla</h3>
-                <h4>CatoKilla</h4>
+        <div class="col">
+            <div class="col-content">
+                <h1 class="footer-title"><a href="music.html">Music</a></h1>
+                <h2 class="footer-subtitle"><a href="discography.html">Discography</a></h2>
+                <h2 class="footer-subtitle"><a href="beatmaker.html">Beat Composer</a></h2>
+                <h2 class="footer-subtitle"><a href="radio.html">Radio</a></h2>
             </div>
             
-            <div class="item5">
-                <img class=cover style="width:300px; height:300px;" src="images/discography cover/CantLose_Rhiann_Cover.jpg" onclick="location.href='.html'">
-                <h3>Can't Loose</h3>
-                <h4>Rhiann</h4>
+        </div>
+
+        <div class="col">
+            <div class="col-content">
+                <h1 class="footer-title"><a href="articles.html">Articles</a></h1>
+                <h2 class="footer-subtitle"><a href="catelog.html">Catelog</a></h2>
             </div>
+        </div>
 
-            <div class="item6">
-                <img class="cover" style="width:300px; height:300px;" src="images/discography cover/InThePalmOfYourHands_BurkeRanelin_Cover.jpg" onclick="location.href='.html'" alt="Buffalo">
-                <h3>In The Palm Of Your Hands</h3>
-                <h4>Burke Ranelin</h4>
+        <div class="col">
+            <div class="col-content">
+                <h1 class="footer-title"><a href="gallery.html">Gallery</a></h1>
+                <h2 class="footer-subtitle"><a href="browse.html">Browse</a></h2>
+                <h2 class="footer-subtitle"><a href="theather.html">Theater</a></h2>
+                <h2 class="footer-subtitle"><a href="vault.html">Vault</a></h2>
             </div>
+        </div>
 
-            <div class="item7">
-                <img class=cover style="width:300px; height:300px;" src="images/discography cover/ItsThatTimeOfYearAgain_CassAvier_Cover.jpg"  onclick="location.href='.html'">
-                <h3>It's That Time Of Year Again</h3>
-                <h4>Cass Avier</h4>
+        <div class="col">
+            <div class="col-content">
+                <h1 class="footer-title"><a href="about.html">About</a></h1>
+                <h2 class="footer-subtitle"><a href="contact.html">Contact</a></h2>
+                <h2 class="footer-subtitle"><a href="devlog.html">Dev Log</a></h2>
             </div>
-
-            <div class="item8">
-                <img class=cover style="width:300px; height:300px;" src="images/discography cover/Jaded_CassAvier_Cover.jpg"  onclick="location.href='.html'">
-                <h3>Jaded</h3>
-                <h4>Cass Avier</h4>
-            </div>
-
-            <div class="item9">
-               <img class=cover style="width:300px; height:300px;" src="images/discography cover/NoConsequences_MiloVenus_Cover.png"  onclick="location.href='.html'">
-               <h3>No Consequences</h3>
-               <h4>Milo Venus</h4>
-            </div>
-
-            <div class="item10">
-                <img class=cover style="width:300px; height:300px;" src="images/discography cover/onethreestreaming_onethree_Cover.jpg"  onclick="location.href='.html'">
-                <h3>onethreestreaming</h3>
-                <h4>onethree</h4>
-            </div>
-
-            <div class="item11">
-               <img class=cover style="width:300px; height:300px;" src="images/discography cover/PeachConformity_AriOkin_Cover.jpg"  onclick="location.href='.html'">
-               <h3>Peach Conformity</h3>
-               <h4>Ari Okin</h4>
-            </div>
-
-            <div class="item12">
-               <img class=cover style="width:300px; height:300px;" src="images/discography cover/PenelopeWine_CatoKilla_Cover.jpg"  onclick="location.href='.html'">
-               <h3>Penelope Wine</h3>
-               <h4>CatoKilla</h4>
-            </div>
-
-            <div class="item13">
-                <img class=cover style="width:300px; height:300px;" src="images/discography cover/PLAZA_BurkeRanelin_Cover.jpg"  onclick="location.href='.html'">
-                <h3>PLAZA</h3>
-                <h4>Burke Ranelin</h4>
-            </div>
-
-            <div class="item14">
-                <img class=cover style="width:300px; height:300px;" src="images/discography cover/Shawty_NolanKaine_Cover.jpeg"  onclick="location.href='.html'">
-                <h3>Shawty</h3>
-                <h4>Nolan Kaine</h4>
-            </div>
-
-            <div class="item15">
-                <img class=cover style="width:300px; height:300px;" src="images/discography cover/SinnersSingMyTunes_CassAvier_Cover.jpg"  onclick="location.href='.html'">
-                <h3>Sinners Sing My Tunes</h3>
-                <h4>Cass Avier</h4>
-            </div>
-
-            <div class="item16">
-                <img class=cover style="width:300px; height:300px;" src="images/discography cover/ThereComesATime_VolunteerPark_Cover.jpg"  onclick="location.href='.html'">
-                <h3>There Comes A Time</h3>
-                <h4>Volunteer Park</h4>
-            </div>
-
-            <div class="item17">
-                <img class=cover style="width:300px; height:300px;" src="images/discography cover/RanelinsDeed_BurkeRanelin_Cover.jpg" onclick="location.href='.html'">
-                <h3>Ranelin's Deed</h3>
-                <h4>Burke Ranelin</h4>
-            </div>
-
-            <div class="item18">
-                <img class=cover style="width:300px; height:300px;" src="images/discography cover/Western Nights Cover 12_9.jpg" style=" align-items: center; width: 300px;" onclick="location.href='emocomic.html'">
-                <h3>Western Nights</h3>
-                <h4>Volunteer Park</h4>
-            </div>
-
-            <div class="item19">
-                <img class=cover style="width:300px; height:300px;" src="images/discography cover/TheMastersGlobe_CatoKilla_Cover.JPG" style=" align-items: center; width: 300px;" onclick="location.href='emocomic.html'">
-                <h3>The Master's Globe</h3>
-                <h4>CatoKilla</h4>
-            </div>
-
-            <div class="item20">
-                <img class=cover style="width:300px; height:300px;" src="images/discography cover/WalkWithMe_NolanKaine_Cover.jpeg" style=" align-items: center; width: 300px;" onclick="location.href='emocomic.html'">
-                <h3>Walk With Me</h3>
-                <h4>Nolan Kaine</h4>
-             </div>
-
+        </div>
+    </div>
+    
+    <div class="footer-subsubtitle">
+        <h3>Copyright &copy Civic Engagement 2025<br>Website by Natalie Rosenstrom &#10044<br>
+            <a href="index.html">
+                <img src="images/buttons/vp-button.png" alt="to home" style= "width:70px; border:none;">
+            </a>
+            </h3>
+    
 
     </div>
-           
+ 
+</div>
 
-    
+  <script>
+
+    const albums = [
+
+        {
+        title: "There Comes A Time",
+        artist: "Volunteer Park",
+        cover: "images/discography cover/ThereComesATime_VolunteerPark_Cover.jpg",
+        year: 2024,
+      },
+        {
+        title: "Western Nights",
+        artist: "Volunteer Park",
+        cover: "images/discography cover/Western Nights Cover 12_9.jpg",
+        year: 2023,
+      },
+      {
+        title: "The Master's Globe",
+        artist: "Cato Killa",
+        cover: "images/discography cover/TheMastersGlobe_CatoKilla_Cover.JPG",
+        year: 2023,
+      },
+      {
+        title: "Penelope Wine",
+        artist: "Cato Killa",
+        cover: "images/discography cover/PenelopeWine_CatoKilla_Cover.jpg",
+        year: 2022,
+      },
+      {
+        title: "Cato Killa",
+        artist: "Cato Killa",
+        cover: "images/discography cover/CatoKilla_CatoKilla_Cover.JPG",
+        year: 2022,
+      },
+      {
+        title: "Peach Conformity",
+        artist: "Ari Okin",
+        cover: "images/discography cover/PeachConformity_AriOkin_Cover.jpg",
+        year: 2024,
+      },
+      {
+        title: "No Consequences",
+        artist: "Milo Venus",
+        cover: "images/discography cover/NoConsequences_MiloVenus_Cover.png",
+        year: 2022,
+      },
+      {
+        title: "onethreestreaming",
+        artist: "onethree",
+        cover: "images/discography cover/onethreestreaming_onethree_Cover.jpg",
+        year: 2025,
+      },
+      {
+        title: "Can't Lose",
+        artist: "Rhiann",
+        cover: "images/discography cover/CantLose_Rhiann_Cover.jpg",
+        year: 2024,
+      },
+      {
+        title: "In The Palm of Your Hands",
+        artist: "Burke Ranelin",
+        cover: "images/discography cover/InThePalmOfYourHands_BurkeRanelin_Cover.jpg",
+        year: 2022,
+      },
+      {
+        title: "A Straw Bridge Falls",
+        artist: "Burke Ranelin",
+        cover: "images/discography cover/AStrawBridgeFalls_BurkeRanelin_Cover.jpg",
+        year: 2022,
+      },
+      {
+        title: "PLAZA",
+        artist: "Burke Ranelin",
+        cover: "images/discography cover/PLAZA_BurkeRanelin_Cover.jpg",
+        year: 2022,
+      },
+      {
+        title: "Burke's Luxury",
+        artist: "Burke Ranelin",
+        cover: "images/discography cover/PLAZA_BurkeRanelin_Cover.jpg",
+        year: 2022,
+      },
+      {
+        title: "Ranelin's Deed",
+        artist: "Burke Ranelin",
+        cover: "images/discography cover/RanelinsDeed_BurkeRanelin_Cover.jpg",
+        year: 2021,
+      },
+      {
+        title: "Walk With Me",
+        artist: "Nolan Kaine",
+        cover: "images/discography cover/WalkWithMe_NolanKaine_Cover.jpeg",
+        year: 2021,
+      },
+      {
+        title: "Shawty",
+        artist: "Nolan Kaine",
+        cover: "images/discography cover/Shawty_NolanKaine_Cover.jpeg",
+        year: 2025,
+      },
+      {
+        title: "Awesum!",
+        artist: "Nolan Kaine",
+        cover: "images/discography cover/Awesum!_NolanKaine_Mix.jpg",
+        year: 2025,
+      },
+      {
+        title: "Sinners Sing My Tunes",
+        artist: "CASS AVIER",
+        cover: "images/discography cover/SinnersSingMyTunes_CassAvier_Cover.jpg",
+        year: 2013,
+      },
+      {
+        title: "It's That Time of year Again When I Start Seeing Faces in the Trees",
+        artist: "CASS AVIER",
+        cover: "images/discography cover/ItsThatTimeOfYearAgain_CassAvier_Cover.jpg",
+        year: 2021,
+      },
+      {
+        title: "Jaded ",
+        artist: "CASS AVIER",
+        cover: "images/discography cover/Jaded_CassAvier_Cover.jpg",
+        year: 2020,
+      },
+    ];
+
+    // Function to render album cards
+    function renderAlbums(list) {
+      const container = document.getElementById('albumContainer');
+      container.innerHTML = '';
+
+      list.forEach(album => {
+        const div = document.createElement('div');
+        div.className = 'album';
+        div.innerHTML = `
+          <img src="${album.cover}" alt="${album.title}" onclick="location.href='${album.link}'">
+          <h3>${album.title}</h3>
+          <h4>${album.artist}</h4>
+          <p><em>${album.year}</em></p>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    // Function to sort albums
+    function sortAlbums(criteria) {
+      const sorted = [...albums];
+      if (criteria === 'title' || criteria === 'artist') {
+        sorted.sort((a, b) => a[criteria].localeCompare(b[criteria]));
+      } else if (criteria === 'year') {
+        sorted.sort((a, b) => b.year - a.year);
+      }
+      renderAlbums(sorted);
+    }
+
+    // Render albums on initial load
+    renderAlbums(albums);
+  </script>
+
+
 </body>
 </html>
+

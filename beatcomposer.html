@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beat Composer</title>
     <link rel="stylesheet" href="index.css">
+
+    <nav>
+    <ul>
+      <li class="backarrow"><a href="index.html"><img src="images/buttons/BackArrow.svg"></a></li>
+
+      <li class="navhome"><a href="index.html"><img src="images/buttons/HomeButtonSquare.svg" alt="to home"></a></li>
+
+      <li class="navbuttons">
+          <a class="navmusic" href="discography.html">MUSIC</a>
+          <a class="navarticles" href="articles.html">ARTICLES</a>
+          <a class="navgallery" href="gallery.html">GALLERY</a>
+          <a class="navabout" href="about.html">ABOUT</a>
+      </li>
+    </ul>
+</nav>
 <style>
 
 body {
@@ -22,7 +37,7 @@ body {
       align-items: center;
       text-align: center;
       gap: 10px;
-      margin: 0;
+      margin:200px 20px 200px 20px;
     }
 
     .button-container img {
@@ -60,25 +75,24 @@ body {
 
 </head>
 <body>
+<div class="pagecontainer">
 
-    <div class="LgogToHome">
-        <a href="index.html">
-        <img src="images/vp-button.png" alt="to home" style= "width:70px;">
-        </a>
-    </div>
-    <h1>Beat Composer</h1>
+  <h1>𝄞 Beat Composer ♫</h1>
+  <p>Press play to start sound ♪. Toggle sound with buttons. Press pause to stop sound. Refresh to start again.⋆.˚♬⋆.˚</p>
 
-    <div class="button-container">
-        <button id="play" class="sound-button"><img src="images/play.png" alt="Play All Sounds"></button>
-        <button id="stop" class="sound-button"><img src="images/stop.png" alt="Stop All Sounds"></button>
-        <button id="toggle1" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 1"></button>
-        <button id="toggle2" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 2"></button>
-        <button id="toggle3" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 3"></button>
-        <button id="toggle4" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 4"></button>
-        <button id="toggle5" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 5"></button>
-        <button id="toggle6" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 6"></button>
-        <button id="toggle7" class="sound-button"><img src="images/vp-button.png" alt="Toggle Sound 7"></button>
-      </div>
+  <div class="button-container">
+    <button id="play" class="sound-button"><img src="images/buttons/play.png" alt="Play All Sounds"></button>
+    <button id="stop" class="sound-button"><img src="images/buttons/stop.png" alt="Stop All Sounds"></button>
+    <button id="toggle1" class="sound-button"><img src="images/buttons/vp-button.png" alt="Toggle Sound 1"></button>
+    <button id="toggle2" class="sound-button"><img src="images/buttons/vp-button.png" alt="Toggle Sound 2"></button>
+    <button id="toggle3" class="sound-button"><img src="images/buttons/vp-button.png" alt="Toggle Sound 3"></button>
+    <button id="toggle4" class="sound-button"><img src="images/buttons/vp-button.png" alt="Toggle Sound 4"></button>
+    <button id="toggle5" class="sound-button"><img src="images/buttons/vp-button.png" alt="Toggle Sound 5"></button>
+    <button id="toggle6" class="sound-button"><img src="images/buttons/vp-button.png" alt="Toggle Sound 6"></button>
+    <button id="toggle7" class="sound-button"><img src="images/buttons/vp-button.png" alt="Toggle Sound 7"></button>
+  </div>
+
+</div>
 
 
 <!-- JavaScript for audio -->
@@ -157,5 +171,62 @@ body {
     document.getElementById('toggle6').addEventListener('click', () => toggleSound(5));
     document.getElementById('toggle7').addEventListener('click', () => toggleSound(6));
   </script>
+
+  
+
+
+
+<div class="footer">
+    <div class="row">
+        <div class="col">
+            <div class="col-content">
+                <h1 class="footer-title">Civic Engagement</h1> <br>
+                <h2 class="footer-subtitle"><a href="civicengagementwec@gmail.com">Contact Us</a></h2>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="col-content">
+                <h1 class="footer-title"><a href="music.html">Music</a></h1>
+                <h2 class="footer-subtitle"><a href="discography.html">Discography</a></h2>
+                <h2 class="footer-subtitle"><a href="beatmaker.html">Beat Composer</a></h2>
+                <h2 class="footer-subtitle"><a href="radio.html">Radio</a></h2>
+            </div>
+            
+        </div>
+
+        <div class="col">
+            <div class="col-content">
+                <h1 class="footer-title"><a href="articles.html">Articles</a></h1>
+                <h2 class="footer-subtitle"><a href="catelog.html">Catelog</a></h2>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="col-content">
+                <h1 class="footer-title"><a href="gallery.html">Gallery</a></h1>
+                <h2 class="footer-subtitle"><a href="browse.html">Browse</a></h2>
+                <h2 class="footer-subtitle"><a href="theather.html">Theater</a></h2>
+                <h2 class="footer-subtitle"><a href="vault.html">Vault</a></h2>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="col-content">
+                <h1 class="footer-title"><a href="about.html">About</a></h1>
+                <h2 class="footer-subtitle"><a href="contact.html">Contact</a></h2>
+                <h2 class="footer-subtitle"><a href="devlog.html">Dev Log</a></h2>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-subsubtitle">
+        <h3>Copyright &copy Civic Engagement 2025<br>Website by Natalie Rosenstrom &#10044<br>
+            <a href="index.html">
+                <img src="images/buttons/vp-button.png" alt="to home" style= "width:70px; border:none;">
+            </a>
+            </h3>
+    </div>
+</div>
 </body>
 </html>

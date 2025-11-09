@@ -1,118 +1,160 @@
-/* NAV styling */
 
-.LgogToHome a, .LgogToHome {
-  border: none;
-  margin:10;
-  padding: 10;
-  height: 54px;
-}
 
-ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
-  list-style-type: none;
+nav ul {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* left | center | right */
+  align-items: center;
+  list-style: none;
   padding: 10px;
-  margin-top: 0;
-  overflow: hidden;
-  float: right;
-  
+  margin: 0;
 }
-
-li {
-
-}
-
+    
 a {
   color: black;
   text-decoration: none;
   font-style: italic;
   padding: 5px;
   border: 2px solid #86939d; 
-
-
 }
 
-/* Nav buttons */
 li a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 
-  width: 30px;
-  height: 30px;
-  margin: 10px;
-  padding: 10px;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    padding: 10px;
 
-  background-color: #f0dbb1;
-  box-shadow: 0 10px 10px 0 #000000;
-  box-shadow: 5px 5px 0px rgb(0, 0, 0);
+    background-color: #f0dbb1;
+    box-shadow: 0 10px 10px 0 #000000;
+    box-shadow: 5px 5px 0px rgb(0, 0, 0);
 
-
-  font-family: 'Avenir', sans-serif;
-  font-weight: 600;
-  font-size: 0.6rem;
-  letter-spacing: .5px;
-
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-image 0.2s ease;
+    font-family: 'Avenir', sans-serif;
+    font-weight: 600;
+    font-size: 0.6rem;
+    letter-spacing: .5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-image 0.2s ease;
 }
 
 li a:hover {
   color: rgb(55, 49, 49);
-  background-image: url("images/NAVbuttonengaged.png");
+  background-image: url("images/buttons/NAVbuttonengaged.png");
   background-size: cover;
   transform: scale(0.96) translateY(-2px);
   box-shadow: 2px;
-
-
 }
 
 li .navmusic:hover,
 li .navarticles:hover,
 li .navgallery:hover,
 li .navabout:hover {
-  background-image: url("images/NAVbuttonengaged.png");
-  background-size: cover;
-  transform: scale(0.9) translateY(2px);
-  
-  transition: all 0.2s ease;
+    background-image: url("images/buttons/NAVbuttonengaged.png");
+    background-size: cover;
+    transform: scale(0.9) translateY(2px);
+    transition: all 0.2s ease;
+    cursor:crosshair;
 }
 
-footer{
-    text-align: center;
-    display: flex;    
-    flex-wrap:wrap;
-    justify-content: center;
-    bottom: 0;
-    margin: auto;
-    width: 100%;
-    text-align: center;
-    padding: 15px;
-    background-color: #b7ccda;
-
-   img{
-        max-width: 40px;
-        max-height: 40px;
-        margin:auto;
-    }
-
-    p{
-      font-family: 'Times New Roman', Times, serif;
-      font-size: .8rem;
-    }
-
-
+.backarrow {
+  justify-self: start; 
+  a{
+    border:none;
+    box-shadow: none;
+  }
+  a :hover{
+    border:2px solid #000000;
+  }
 }
-
-@media  (max-width: 1200px) {
-  footer {
-    position:fixed;
-    right:0;
-    bottom: 0;
-    left: 0;
+.navhome {
+  justify-self: center; 
+  border:none;
+  a{
+    border:none;
+    box-shadow: none;
+  }
+  a :hover{
+    border:2px solid #000000;
   }
 }
 
+.navbuttons {
+  justify-self: end; 
+  display: flex;
+}
+
+.footer{
+  display:flex;
+  flex-direction: wrap;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #97ADB0;
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  color:rgb(34, 0, 255);
+  padding: 50px;
+  padding-bottom: 0;
+ 
+}
+
+.footer a{
+  border:0;
+}
+
+.row{
+  display: flex;
+  flex-direction: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 1024px;
+  margin:0;
+}
+
+.col{
+  flex: 1;
+  padding:20px;
+}
+
+.col-content{
+  min-height: 200px;
+
+}
+
+.footer-title{
+  font-size: 2rem;
+  margin:0;
+}
+
+.footer-subtitle{
+  font-size: 1rem;
+}
+.footer-subtitle:hover{
+  text-decoration: underline;
+  cursor:pointer;
+}
+
+.footer-subsubtitle{
+  font-size: .7rem;
+  display:flex;   
+  flex-direction: row;     
+  flex-wrap: wrap;   
+  flex-basis: 100%; 
+  justify-content: center;
+  text-align: center;
+  color:rgb(34, 0, 255);
+  padding:20px;
+  img{
+      padding:20px;
+  }
+}
+
+.pagecontainer{
+  display:flex;
+  flex-direction: column;
+  margin:auto;
+  justify-content: center;
+  padding:20px;
+  text-align: center;
+}

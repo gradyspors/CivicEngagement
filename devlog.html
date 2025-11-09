@@ -3,7 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="index.css">
+
     <title>Development Log</title>
+
+<nav>
+    <ul>
+      <li class="backarrow"><a href="index.html"><img src="images/buttons/BackArrow.svg"></a></li>
+
+      <li class="navhome"><a href="index.html"><img src="images/buttons/HomeButtonSquare.svg" alt="to home"></a></li>
+
+      <li class="navbuttons">
+          <a class="navmusic" href="discography.html">MUSIC</a>
+          <a class="navarticles" href="articles.html">ARTICLES</a>
+          <a class="navgallery" href="gallery.html">GALLERY</a>
+          <a class="navabout" href="about.html">ABOUT</a>
+      </li>
+    </ul>
+</nav>
     <style>
        
 
@@ -27,11 +44,11 @@
         h1 {
             font-family: BummerCondensedItalic;
             letter-spacing: 10px;
-            font-size: 60pt;
+            font-size: 5em;
             text-align: center;
         }
 
-        h1:hover {
+        h1 :hover {
             transform: rotateY(150deg);
             color: rgb(0, 255, 47);
             background-color: black;
@@ -169,7 +186,7 @@
         </p>
 
         <p class="gradystyle"> Tonight we finalized the home page map as the structure to navigate the site. One of many overarching goals of ours was to try and emulate the experience of exploring in a human built environment, like a city, in a 2d web space. The map gives the website visitor the opportunity to jump into a random corner of the website with no real context of how they ended up there and work their way out through the different layers of digital media. I’m planning to work on the code of a conveyor belt-like gallery landing page where images are generated from a bank and placed on a self moving page in random order, size and position. This will be the initial location for the “Gallery” button containing subsequent links to the vault and theatre. It feels like we are now on the downhill stretch to completion. -Grady</p>
-        <img src="images/civicengagmentmapfinal.png" alt="map image">
+        <img src="images/dev_log_photos/civicengagmentmapfinal-copy.png" alt="map image">
 
         <h2>May 14, 2025</h2>
 
@@ -198,7 +215,7 @@
             This was a huge hurdle for bc it is written in JavaScript and I am only a baby developer.
             I knew that I had to use an audio API and with enough fidgeting I finally got it to behave how we wanted it to.
             <br><br>
-            <img src="images/homepage-july9.png">
+            <img src="images/dev_log_photos/homepage-july9 copy.png">
             <br><br>
             I also got the image map to work which is gonna be so awesome.
             I’m very delighted with the progress made today! Thank you adderall!
@@ -211,5 +228,58 @@
         </p>
         <img src="devlog/homepage_5:25:2024.png">
     </div>
+    
+<div class="footer">
+    <div class="row">
+        <div class="col">
+            <div class="col-content">
+                <h1 class="footer-title">Civic Engagement</h1> <br>
+                <h2 class="footer-subtitle"><a href="civicengagementwec@gmail.com">Contact Us</a></h2>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="col-content">
+                <h1 class="footer-title"><a href="music.html">Music</a></h1>
+                <h2 class="footer-subtitle"><a href="discography.html">Discography</a></h2>
+                <h2 class="footer-subtitle"><a href="beatmaker.html">Beat Composer</a></h2>
+                <h2 class="footer-subtitle"><a href="radio.html">Radio</a></h2>
+            </div>
+            
+        </div>
+
+        <div class="col">
+            <div class="col-content">
+                <h1 class="footer-title"><a href="articles.html">Articles</a></h1>
+                <h2 class="footer-subtitle"><a href="catelog.html">Catelog</a></h2>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="col-content">
+                <h1 class="footer-title"><a href="gallery.html">Gallery</a></h1>
+                <h2 class="footer-subtitle"><a href="browse.html">Browse</a></h2>
+                <h2 class="footer-subtitle"><a href="theather.html">Theater</a></h2>
+                <h2 class="footer-subtitle"><a href="vault.html">Vault</a></h2>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="col-content">
+                <h1 class="footer-title"><a href="about.html">About</a></h1>
+                <h2 class="footer-subtitle"><a href="contact.html">Contact</a></h2>
+                <h2 class="footer-subtitle"><a href="devlog.html">Dev Log</a></h2>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-subsubtitle">
+        <h3>Copyright &copy Civic Engagement 2025<br>Website by Natalie Rosenstrom &#10044<br>
+            <a href="index.html">
+                <img src="images/buttons/vp-button.png" alt="to home" style= "width:70px; border:none;">
+            </a>
+            </h3>
+    </div>
+</div>
 </body>
 </html>
