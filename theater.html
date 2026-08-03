@@ -5,17 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body {
-            background-color: black;
-        background-image: url('images/theater.png');
-     }
+    <link rel="stylesheet" href="index.css">
 
-     .container {
-      display: flex; /* Makes it a flex container */
-      justify-content: center; /* Centers content horizontally */
-      align-items: center; /* Centers content vertically */
-      height: 100vh; /* Optional: full viewport height */
+
+    <nav>
+    <ul>
+      <li>
+        <a href="index.html">Map</a>
+          <a  href="gallery.html">Gallery</a>
+          <a  href="articles.html">Articles</a>
+          <a  href="theater.html">Theater</a>
+          <a  href="beatcomposer.html">Composer</a>
+          <a  href="radio.html">Radio</a>
+          <a  href="about.html">About</a>
+      </li>
+  </ul>
+</nav>
+
+<style>
+
+li a{
+    display: block;
+    max-width:200px;
+    padding: 2px; 
+    color:rgb(163, 136, 136);
+    background-color: rgba(57, 57, 57, 0.683);
+}
+    body {
+        background-color: black;
+    background-image: url('images/background/theater.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    }
+
+
+    .container {
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      height: 100vh;
+      margin-top: -100px;
     }
     iframe {
       width: 560px;
@@ -23,9 +53,9 @@
       border: none;
     }
 
-     
-    </style>
+</style>
 </head>
+
 <body>
 <div class="container">
     
