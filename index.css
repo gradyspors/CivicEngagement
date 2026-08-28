@@ -10,7 +10,16 @@ li a{
 }
 
 
+.buildinginfo{
+  position:fixed;
+  top:0;
+  right:0;
+  max-width: 20%;
+}
 
+.button{
+  color:aquamarine;
+}
 
 
 
@@ -91,4 +100,17 @@ li a{
   justify-content: center;
   padding:20px;
   text-align: center;
+}
+
+.ComposerNav{
+
+  li{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  a{
+    color:aliceblue;
+  }
 }

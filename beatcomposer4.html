@@ -30,10 +30,8 @@
     color:rgb(113, 203, 255);
 }
 
-
-
 body {
-    background-color: rgb(105, 133, 187);
+    background-color: rgb(70, 126, 124);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
@@ -105,6 +103,8 @@ body {
 
 </div>
 
+
+
  <nav class="ComposerNav">
     <ul>
       <li>
@@ -117,20 +117,21 @@ body {
   </ul>
 </nav>
 
-
-<!-- JavaScript for audio -->
   <script>
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
     const gainNodes = [];
     const audioSources = [];
     const audioUrls = [
-      'beats/Backyard.wav',
-      'beats/Bass.wav',
-      'beats/Clap.wav',
-      'beats/Knob.wav',
-      'beats/Lead.wav',
-      'beats/Metallic.wav',
-      'beats/Rhodes 1.wav'
+      'beats/BeatComposerLoops4/Bass.wav',
+      'beats/BeatComposerLoops4/Blip.wav',
+      'beats/BeatComposerLoops4/Chords.wav',
+      'beats/BeatComposerLoops4/Hi.wav',
+      'beats/BeatComposerLoops4/Lead 2.wav',
+      'beats/BeatComposerLoops4/SIne.wav',
+      'beats/BeatComposerLoops4/Sub.wav',
+      
+      
+     
     ];
 
     async function loadAudio(url) {
