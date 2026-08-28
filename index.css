@@ -112,5 +112,13 @@ li a{
 
   a{
     color:aliceblue;
+    text-decoration: none;
+    padding: 10px;
+
+  }
+
+  li a .nav-active{
+    color:red;
   }
 }
+
