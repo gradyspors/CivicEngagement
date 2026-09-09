@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burke Ranelin</title>
+    <link rel="stylesheet" href="index.css">
+
+    
+
+<nav>
+    <ul>
+      <li>
+        <a href="index.html">Map</a>
+          <a  href="gallery.html">Gallery</a>
+          <a  href="articles.html">Articles</a>
+          <a  href="theater.html">Theater</a>
+          <a  href="beatcomposer.html">Composer</a>
+          <a  href="radio.html">Radio</a>
+          <a  href="about.html">About</a>
+      </li>
+  </ul>
+</nav>
+
+
+<div class="buildinginfo">
+    <button onclick="typeWriter1()">William H. Gates Hall</button>
+    <p id="demo"></p>
+</div>
+
+<style>
+
+ul{
+        list-style: none;
+}
+
+li a{
+    display: block;
+    padding: 2px; 
+}
+
+body{
+    background-image: url(images/background/BurkeRanelinBackground.jpeg);
+    background-size: cover;
+    
+    img{
+        filter: grayscale(100%);
+    }
+}
+
+.mailboxascii{
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    
+    a{
+    text-decoration: none;
+    text-decoration-style: none;
+    font-size: 2em;
+    color:#ffffff;
+    mix-blend-mode: difference;
+    }
+}
+    
+</style>
+
+
+
+</head>
+<body>
+<div class="mailboxascii">
+    <pre> <a target="_blank" href="https://on.soundcloud.com/uWKFIQ536bryXlEfX6 " > 
+       ..--""|
+       |     |
+       | .---'
+ (\-.--| |-----------.
+/ \) \ | |            \
+|:.  | | |             |
+|:.  | |o| B U R K E   |
+|:.  | `"`             |
+|:.  |_  __   __ _  __ /
+`""""`""""|=`|"""""""`
+          |=_|
+          |= |
+          |= |
+          |= |
+          |= |
+          |= |
+          |= |
+          |= |
+          |= |
+          |= |
+          |= |
+          |= |
+          |= |
+          |= |
+          |= |
+          |= |
+          |= |
+          |= |
+          |= |
+          |= |
+                R A N E L I N
+ </a>      
+    </pre>
+</div>
+
+</body>
+
+<script>
+        var txt1 = '"William, no matter how long we wrestle with each other, you know what I know. A wicker man burns, a straw bridge falls. There is no curtain to pull away. You are either by me or you are not. I would gladly take your hand." - Ranelin August 5th 2005';
+        var speed = 50;
+        var i = 0;
+        var j = 0;
+
+        function typeWriter1() {
+            if (j < txt1.length) {
+                document.getElementById("demo").innerHTML += txt1.charAt(j);
+                j++;
+                setTimeout(typeWriter1, speed);
+            }
+        }
+</script>
+</html>

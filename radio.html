@@ -21,6 +21,12 @@
       </li>
   </ul>
 </nav>
+
+<div class="buildinginfo">
+    <button onclick="typeWriter1()">Wells Fargo Center</button>
+    <p id="demo"></p>
+</div>
+
 <style>
 body {
     background-color: black;
@@ -50,4 +56,19 @@ iframe {
     <iframe src="https://www.youtube.com/embed/KCGNhUIA0ac?si=obZukf5pohoYltRu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     
 </body>
+
+<script>
+        var txt1 = 'The Wells Fargo center is the third tallest building in Minneapolis. It is in the art deco style with a subtle postmodern sensibility paying homage to New York City’s 30 Rockefeller Plaza’s tapered concrete slabs. It is home to the Wells Fargo museum showcasing gold nuggets and coins as well as a 1863 stagecoach. The building functions as an office for other banks and law firms. It was designed in 1982 by Caesar Pelli.';
+        var speed = 50;
+        var i = 0;
+        var j = 0;
+
+        function typeWriter1() {
+            if (j < txt1.length) {
+                document.getElementById("demo").innerHTML += txt1.charAt(j);
+                j++;
+                setTimeout(typeWriter1, speed);
+            }
+        }
+</script>
 </html>

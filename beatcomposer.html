@@ -21,6 +21,11 @@
   </ul>
 </nav>
 
+<div class="buildinginfo">
+    <button onclick="typeWriter1()">Yoyogi National Gymnasium</button>
+    <p id="demo"></p>
+</div>
+
 <style>
 
   li a{
@@ -204,5 +209,20 @@ body {
   </script>
 
 </body>
+
+<script>
+        var txt1 = 'Designed by Kenzo Tange as a venue for Swimming and Basketball in the 1964 Tokyo Olympics, the Yoyogi National Gymnasium dramatically encompasses the dialogue between traditional Japanese sensibilities and post World War 2 modernism. Today, it holds community sporting events and stands as a landmark plaza for the surrounding park.';
+        var speed = 50;
+        var i = 0;
+        var j = 0;
+
+        function typeWriter1() {
+            if (j < txt1.length) {
+                document.getElementById("demo").innerHTML += txt1.charAt(j);
+                j++;
+                setTimeout(typeWriter1, speed);
+            }
+        }
+</script>
 
 </html>

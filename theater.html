@@ -22,6 +22,11 @@
   </ul>
 </nav>
 
+<div class="buildinginfo">
+    <button onclick="typeWriter1()">Kielce Cultural Center</button>
+    <p id="demo"></p>
+</div>
+
 <style>
 
 li a{
@@ -63,4 +68,19 @@ li a{
 
     </div>
 </body>
+
+<script>
+        var txt1 = 'With final construction completed in 2002, the Kielce (Poland) Cultural Center designed by Daniel Olędzki is a magnet for the performing arts. In the courtyard you can find a monument to world renowned jazz trumpeter Miles Davis.';
+        var speed = 50;
+        var i = 0;
+        var j = 0;
+
+        function typeWriter1() {
+            if (j < txt1.length) {
+                document.getElementById("demo").innerHTML += txt1.charAt(j);
+                j++;
+                setTimeout(typeWriter1, speed);
+            }
+        }
+</script>
 </html>
