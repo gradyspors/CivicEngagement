@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio</title>
+    <link rel="stylesheet" href="index.css">
+
+
+
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">Map</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="articles.html">Articles</a>
+                <a href="theater.html">Theater</a>
+                <a href="beatcomposer.html">Composer</a>
+                <a href="radio.html">Radio</a>
+                <a href="about.html">About</a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+
+    <div class="buildinginfo">
+        <button onclick="typeWriter1()">Wells Fargo Center</button>
+        <p id="demo"></p>
+    </div>
+
+    <style>
+
+        .buildinginfo{
+            background-color: rgba(255, 0, 0, 0);;
+        }
+        body {
+            background-color: black;
+            background-image: url(images/background/radioclockbackgroundimage.png);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+
+        .container {
+           display:flexbox;
+           flex-wrap: ;
+        }
+
+        iframe {
+            width: 392px;
+            height: 220.5px;
+            border: none;
+            transform: scale(.5);
+            margin:0;
+            margin-top:-100px;
+            margin-left:20%;
+            
+        }
+
+        @font-face {
+            font-family: Calculatrix;
+            src: url(fonts/Calculatrix7Regular.ttf);
+        }
+
+        @font-face {
+            font-family: digii;
+            src: url(fonts/DS-DIGII.TTF);
+        }
+
+        .clocknumbers {
+            color: #09D402;
+            background-color: black;
+            width: 90px;
+            height:auto;
+            margin-left:60px;
+            padding: 20px;
+            text-align: center;
+            justify-content: center;
+            justify-items: center;
+            align-content: center;
+            font-size: 2em;
+            font-family: digii;
+            border: 5px ridge rgb(60, 60, 60);
+
+        }
+    </style>
+</head>
+
+<body onload="startTime()"></body>
+<div class="container">
+    <iframe src="https://www.youtube.com/embed/KCGNhUIA0ac?si=obZukf5pohoYltRu" title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+    <!-- clock -->
+    <div class="clocknumbers" id="txt"></div>
+    <!-- end clock -->
+</div>
+
+
+<script>
+    // js clock
+    function startTime() {
+        const today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+        setTimeout(startTime, 1000);
+    }
+
+    function checkTime(i) {
+        if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+        return i;
+    }
+    //   end of js clock
+
+    // building info
+    var txt1 = `"William, no matter how long we wrestle with each other, you know what I know. A wicker man burns, a straw bridge falls. There is no curtain to pull away. You are either by me or you are not. I would gladly take your hand." - Ranelin August 5th 2005 
+    "It's funny this is where we got our start Burke, and this is where she'll be. It's hard for me to express how proud I am to call you my friend."- Bill McLutose February 23rd, 2002
+    
+    ...It's a fine place, I was sure from our last talk I had convinced you old friend. You are fickle. Look over the plans again and chin-up, I know you will. Anyways, a change of scenery should be great for you, you've always found something anywhere. I do miss you and Suzanne often, tell her I say hello. You both can pick my brain like nobody else, I thank you for that. Let me know.
+- Burke
+`;
+    var speed = 50;
+    var i = 0;
+    var j = 0;
+
+    function typeWriter1() {
+        if (j < txt1.length) {
+            document.getElementById("demo").innerHTML += txt1.charAt(j);
+            j++;
+            setTimeout(typeWriter1, speed);
+        }
+    }
+    // end of building info
+
+</script>
+
+
+
+</body>
+
+</html>
