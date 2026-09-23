@@ -1,77 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radio</title>
-        <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css">
 
 
 
-<nav>
-    <ul>
-      <li>
-        <a href="index.html">Map</a>
-          <a  href="gallery.html">Gallery</a>
-          <a  href="articles.html">Articles</a>
-          <a  href="theater.html">Theater</a>
-          <a  href="beatcomposer.html">Composer</a>
-          <a  href="radio.html">Radio</a>
-          <a  href="about.html">About</a>
-      </li>
-  </ul>
-</nav>
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">Map</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="articles.html">Articles</a>
+                <a href="theater.html">Theater</a>
+                <a href="beatcomposer.html">Composer</a>
+                <a href="radio.html">Radio</a>
+                <a href="about.html">About</a>
+            </li>
+        </ul>
+    </nav>
 
-<div class="buildinginfo">
-    <button onclick="typeWriter1()">Wells Fargo Center</button>
-    <p id="demo"></p>
-</div>
 
-<style>
-body {
-    background-color: black;
-    background-image: url(images/background/RadioBackgroundImage.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
-}
 
-.container {
-      display: flex; 
-      justify-content: center; 
-      align-items: center; 
-      height: 100vh;
-      margin-top: -200px;
-      
-}
-iframe {
-      width: 392px;
-      height: 220.5px;
-      border: none;
-}
-</style>
-</head>
-<body>
-<div class="container">
-    <iframe src="https://www.youtube.com/embed/KCGNhUIA0ac?si=obZukf5pohoYltRu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</body>
 
-<script>
-        var txt1 = 'The Wells Fargo center is the third tallest building in Minneapolis. It is in the art deco style with a subtle postmodern sensibility paying homage to New York City’s 30 Rockefeller Plaza’s tapered concrete slabs. It is home to the Wells Fargo museum showcasing gold nuggets and coins as well as a 1863 stagecoach. The building functions as an office for other banks and law firms. It was designed in 1982 by Caesar Pelli.';
-        var speed = 50;
-        var i = 0;
-        var j = 0;
+    <div class="buildinginfo">
+        <button onclick="typeWriter1()">Wells Fargo Center</button>
+        <p id="demo"></p>
+    </div>
 
-        function typeWriter1() {
-            if (j < txt1.length) {
-                document.getElementById("demo").innerHTML += txt1.charAt(j);
-                j++;
-                setTimeout(typeWriter1, speed);
-            }
+    <style>
+
+        .buildinginfo{
+            background-color: rgba(255, 0, 0, 0);;
+        }
+        body {
+            background-color: black;
+            background-image: url(images/background/radioclockbackgroundimage.png);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
         }
 
+        .container {
+           display:flexbox;
+           flex-wrap: ;
+        }
+
+        iframe {
+            width: 392px;
+            height: 220.5px;
+            border: none;
+            transform: scale(.5);
+            margin:0;
+            margin-top:-100px;
+            margin-left:20%;
+            
+        }
+
+        @font-face {
+            font-family: Calculatrix;
+            src: url(fonts/Calculatrix7Regular.ttf);
+        }
+
+        @font-face {
+            font-family: digii;
+            src: url(fonts/DS-DIGII.TTF);
+        }
+
+        .clocknumbers {
+            color: #09D402;
+            background-color: black;
+            width: 90px;
+            height:auto;
+            margin-left:60px;
+            padding: 20px;
+            text-align: center;
+            justify-content: center;
+            justify-items: center;
+            align-content: center;
+            font-size: 2em;
+            font-family: digii;
+            border: 5px ridge rgb(60, 60, 60);
+
+        }
+    </style>
+</head>
+
+<body onload="startTime()"></body>
+<div class="container">
+    <iframe src="https://www.youtube.com/embed/KCGNhUIA0ac?si=obZukf5pohoYltRu" title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+    <!-- clock -->
+    <div class="clocknumbers" id="txt"></div>
+    <!-- end clock -->
+</div>
+
+
+<script>
+    // js clock
+    function startTime() {
+        const today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+        setTimeout(startTime, 1000);
+    }
+
+    function checkTime(i) {
+        if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+        return i;
+    }
+    //   end of js clock
+
+    // building info
+    var txt1 = 'The Wells Fargo center is the third tallest building in Minneapolis. It is in the art deco style with a subtle postmodern sensibility paying homage to New York City’s 30 Rockefeller Plaza’s tapered concrete slabs. It is home to the Wells Fargo museum showcasing gold nuggets and coins as well as a 1863 stagecoach. The building functions as an office for other banks and law firms. It was designed in 1982 by Caesar Pelli.';
+    var speed = 50;
+    var i = 0;
+    var j = 0;
+
+    function typeWriter1() {
+        if (j < txt1.length) {
+            document.getElementById("demo").innerHTML += txt1.charAt(j);
+            j++;
+            setTimeout(typeWriter1, speed);
+        }
+    }
+    // end of building info
 
 </script>
 
+
+
+</body>
 
 </html>
