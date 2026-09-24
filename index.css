@@ -157,3 +157,7 @@ li a{
   display:block;
   text-align: center;
 }
+
+.text-bold{
+  font-weight: bold;
+}

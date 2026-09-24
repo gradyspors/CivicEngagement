@@ -247,3 +247,120 @@ li .navabout:hover {
 
 </body>
 </html>
+
+<!-- old about page -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About/Contact</title>
+    <link rel="stylesheet" href="index.css">
+
+<nav>
+    <ul>
+      <li>
+        <a href="index.html">Map</a>
+          <a  href="gallery.html">Gallery</a>
+          <a  href="articles.html">Articles</a>
+          <a  href="theater.html">Theater</a>
+          <a  href="beatcomposer.html">Composer</a>
+          <a  href="radio.html">Radio</a>
+          <a  href="about.html">About</a>
+      </li>
+  </ul>
+</nav>
+
+<style>
+li a{
+    display: block;
+    max-width:200px;
+    padding: 2px; 
+    color:rgb(4, 129, 0);
+}
+.click-image {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            display: none;
+            transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+
+
+
+</style>
+</head>
+<body>
+
+    <h1>About Us</h1>
+    <div class="parallax"></div>
+
+    <div style="height:500px;background-color:rgb(152, 152, 152);font-size:36px; padding: 50px;">
+            <p>Civic Engagement is an organization dedicated to shared artistic practice for community improvement. Some of our goals include becoming a resource for essential goods, an outlet for diverse information, and hub for creative language. <br>
+            We are based in Seattle, WA and Los Angeles, CA.</p>
+    </div>
+
+
+    <!-- SOUND CLICK -->
+    <audio id="click-sound" src="audio/bonk_7zPAD7C.mp3" preload="auto"></audio>
+    <!-- Image element -->
+    <img id="click-image" src="images/VP_Logos/RedVPLogo.png" alt="Click Image" class="click-image">
+
+    <!-- JavaScript to handle the click event -->
+    <script>
+        // Select the audio element
+        const clickSound = document.getElementById('click-sound');
+        // Select the image element
+        const clickImage = document.getElementById('click-image');
+
+        // Function to play the sound
+        function playSound() {
+            // Reset the sound to start from the beginning
+            clickSound.currentTime = 0;
+            clickSound.play();
+        }
+
+        // Function to show the image at the click position, apply random hue rotation and slight rotation
+        function showImage(event) {
+            // Get the click position
+            const x = event.clientX;
+            const y = event.clientY;
+
+            // Set the image position
+            clickImage.style.left = `${x}px`;
+            clickImage.style.top = `${y}px`;
+
+            // Apply a random hue rotation
+            const randomHue = Math.floor(Math.random() * 360);
+            clickImage.style.filter = `hue-rotate(${randomHue}deg)`;
+
+            // Apply a slight random rotation
+            const randomRotation = Math.floor(Math.random() * 41) - 20; // Random rotation between -10 and 10 degrees
+            clickImage.style.transform = `rotate(${randomRotation}deg)`;
+
+            // Display the image
+            clickImage.style.display = 'block';
+
+            // Hide the image after a short delay (e.g., 1 second)
+            setTimeout(() => {
+                clickImage.style.display = 'none';
+            }, 1000);
+        }
+
+        // Function to handle the click event
+        function handleClick(event) {
+            playSound();
+            showImage(event);
+        }
+
+        // Add an event listener to the document to listen for clicks
+        document.addEventListener('click', handleClick);
+    </script>
+
+
+
+     
+
+</body>
+</html>

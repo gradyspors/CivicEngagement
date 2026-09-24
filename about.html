@@ -21,102 +21,59 @@
 </nav>
 
 <style>
-li a{
+
+.about-container{
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    margin: 20%;
+    margin-top: -100px;
+}
+
+p{
+    padding:10px;
     display: block;
-    max-width:200px;
-    padding: 2px; 
-    color:rgb(4, 129, 0);
-}
-.click-image {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            display: none;
-            transition: transform 0.5s ease, filter 0.5s ease;
+    border-style: solid;
+    border-width: 1px;
+    font-size: large;
 }
 
-.threeguys{
-            display: block;
-            width: 300px;
-            height:auto;
+.Civic-Engagement-Logo-Transparent{
+    display: block;
+    border-style: solid;
+    border-width: 1px;
+    max-width: 409px;
 }
 
-.parallax {
-            background-image: url(https://i.pinimg.com/564x/99/ed/7a/99ed7a7b583861501b57de7c9bda8d2d.jpg);
-            min-height: 500px; 
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+h4{
+    font-weight: 100;
+
 }
+
+
+
 </style>
 </head>
 <body>
 
-    <h1>About Us</h1>
-    <div class="parallax"></div>
+<div class="about-container">
+   <div class="Civic-Engagement-Logo-Transparent"><img style="width:200px;" src="images/misc/Civic-Engagement-Logo-Transparent.png" alt="Civic Engagement Logo"></div> 
+    <br>
+    <p><span class="text-bold">Civic Engagement</span> is an organization dedicated to shared artistic practice for community improvement. Some of our goals include becoming a resource for essential goods, an outlet for diverse information, and hub for creative language. We are based in Seattle, WA and Los Angeles, CA.</p>
+    <h3><span class="text-bold">Who Are We?</span></h3>
+    <h4><span class="text-bold">Natalie Rosenstrom</span> is a visual designer and graduate of Cornish College of the Arts. Operating at the intersection of graphic, object and web design, their style is fueled by a love for color and pattern.</h4>
+    <h4><span class="text-bold">Grady Spors</span> is a multidisciplinary audio professional, music producer and pianist. He aspires to reach a deep understanding of the recording arts and its impact on contemporary culture.</h4>
+    <h4><span class="text-bold">Solomon Kruger</span> is a music producer and writer, interested in linguistics and history. Their philanthropic sensibilities are revealed through swaths of relatable melodies and innovative storytelling.</h4>
+    <h4><span class="text-bold">Brandon Lupetti </span> My name is Brandon. If you would like to understand more about the works of Hegel, please reach out to the civic engagement contact page to inquire about our Hegel Understanders’ Club. Thank you.</h4>
+<p></p>
+<p></p>
+<p></p>
+    
+    <h3>Please Contact Us with Inquiries and Submissions:</h3>
+    <h4><a href="emailto:civicengagementweb@gmail.com">civicengagementweb@gmail.com</a></h4>
+    <h5>We accept submissions and inquiries of all kinds…or if you just want to say “Hello”</h5>
+</div>
 
-    <div style="height:500px;background-color:rgb(152, 152, 152);font-size:36px; padding: 50px;">
-            <p>Civic Engagement is an organization dedicated to shared artistic practice for community improvement. Some of our goals include becoming a resource for essential goods, an outlet for diverse information, and hub for creative language. <br>
-            We are based in Seattle, WA and Los Angeles, CA.</p>
-    </div>
-
-
-    <!-- SOUND CLICK -->
-    <audio id="click-sound" src="audio/bonk_7zPAD7C.mp3" preload="auto"></audio>
-    <!-- Image element -->
-    <img id="click-image" src="images/VP_Logos/RedVPLogo.png" alt="Click Image" class="click-image">
-
-    <!-- JavaScript to handle the click event -->
-    <script>
-        // Select the audio element
-        const clickSound = document.getElementById('click-sound');
-        // Select the image element
-        const clickImage = document.getElementById('click-image');
-
-        // Function to play the sound
-        function playSound() {
-            // Reset the sound to start from the beginning
-            clickSound.currentTime = 0;
-            clickSound.play();
-        }
-
-        // Function to show the image at the click position, apply random hue rotation and slight rotation
-        function showImage(event) {
-            // Get the click position
-            const x = event.clientX;
-            const y = event.clientY;
-
-            // Set the image position
-            clickImage.style.left = `${x}px`;
-            clickImage.style.top = `${y}px`;
-
-            // Apply a random hue rotation
-            const randomHue = Math.floor(Math.random() * 360);
-            clickImage.style.filter = `hue-rotate(${randomHue}deg)`;
-
-            // Apply a slight random rotation
-            const randomRotation = Math.floor(Math.random() * 41) - 20; // Random rotation between -10 and 10 degrees
-            clickImage.style.transform = `rotate(${randomRotation}deg)`;
-
-            // Display the image
-            clickImage.style.display = 'block';
-
-            // Hide the image after a short delay (e.g., 1 second)
-            setTimeout(() => {
-                clickImage.style.display = 'none';
-            }, 1000);
-        }
-
-        // Function to handle the click event
-        function handleClick(event) {
-            playSound();
-            showImage(event);
-        }
-
-        // Add an event listener to the document to listen for clicks
-        document.addEventListener('click', handleClick);
-    </script>
 
 
 
